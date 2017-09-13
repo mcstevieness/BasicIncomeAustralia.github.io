@@ -20,7 +20,7 @@ description: "Informational page on how we can get a Basic Income working in Aus
 source_link: "https://github.com/BasicIncomeAustralia/BasicIncomeAustralia.github.io"
 favicon:     #put a path like: "img/favicon.ico"
 touch_icon:  #put a path like: "img/apple-touch-icon.png"
-google_analytics_key: ## put YOUR key here to enable tracking! (blank to disable)
+google_analytics_key: UA-37183004-2
 
 
 ### template colors, used site-wide via css ###
