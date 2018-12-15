@@ -1,0 +1,422 @@
+/*GENERAL NOTES
+.ptag is used instead of the p tag because if you just use the p tag then it becomes easily readable by the computer and suggests reader mode on mobile
+
+*/
+@font-face {
+	font-family: 'Ebrima';
+	src: url('fonts/ebrima.ttf');
+}
+
+@font-face {
+	font-family: 'Yu Gothic';
+	src: url('fonts/YuGothL.ttc');
+}
+
+@font-face {
+	font-family: 'Palanquin Dark';
+	src: url('fonts/PalanquinDark-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Fugaz One';
+	src: url('fonts/FugazOne-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Vidaloka';
+	src: url('fonts/Vidaloka-Regular.ttf');
+}
+
+@font-face {
+	font-family: 'Microsoft Yi Baiti';
+	src: url('fonts/msyi.ttf');
+}
+
+@font-face {
+	font-family: 'Adobe Garamond Pro';
+	src: url('fonts/AGaramondPro-Italic.otf');
+}
+
+button {
+	position: fixed;
+	z-index: 3;
+}
+
+
+/*variable declarations*/
+:root {
+   --colwidth: 260px;
+   --colspacing:40px;
+   --articlewidth:800px;
+}
+
+html, body {
+	top:0px;
+	padding: 0;
+	margin: 0;
+    overflow-x: hidden;
+}
+
+body {
+	background-color:black;
+}
+
+::selection {
+	color:#8fe0dd;
+	background-color: #40a3d1;
+}
+
+a {
+	text-decoration: none;
+	color:inherit;
+}
+
+.invisible {
+	opacity:0;
+	transition: opacity 0.2s;
+	pointer-events: none;
+}
+
+.visible {
+	opacity: 1;
+	transition: opacity 0.2s;
+	pointer-events: auto;
+}
+
+.mob {
+	display: none;
+}
+
+header {
+	background-color: #f5f5f5;
+	border-bottom: 1px #e9e9e9 solid;
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	height: 55px;
+	padding: 2px 0px 0px 0px;
+	text-align: right;
+	z-index: 1;
+	display: block;
+}
+
+header > a {
+	font-size: 14px;
+	color: #a9a9a9;
+	font-family: 'Ebrima', sans-serif;
+	letter-spacing: 0.5px;
+	margin-left: 15px;
+}
+
+header > a > img {
+	position: relative;
+	top:8px;
+	margin: 0px 15px 0px 0px;
+}
+
+#hamburger {
+	position: fixed;
+	left: 40px;
+	top: 15px;
+	margin-left: 0px;
+	cursor: pointer;
+}
+
+#webmenu {
+	position: fixed;
+	background-image:         linear-gradient(188deg, #d9bede, #9cbcfe, #70d4c8); 
+	border-radius: 10px;
+	width:1156px;
+	height: 597px;
+	top:82px;
+	left:25px;
+	z-index: 1;
+	color:white;
+	font-family: 'Yu Gothic', sans-serif;
+	padding-top: 10px;
+	box-shadow:    0vh 1vh 4vw 0vw rgba(0, 0, 0, 0.2);
+}
+
+#col1 {
+	position: absolute;
+	left:25px;
+	width: calc(var(--colwidth) - 50px);
+}
+
+#col2 {
+	position: absolute;
+	left:260px;
+	width: var(--colwidth);
+}
+
+#col3 {
+	position: absolute;
+	left:570px;
+	width: var(--colwidth);
+}
+
+#col4 {
+	position: absolute;
+	left:870px;
+	width: var(--colwidth);
+}
+
+#hr {
+	position: absolute;
+	top:60px;
+	left:25px;
+	height: 1px;
+	width: 1100px;
+	background-color: white;
+	opacity: 0.7;
+}
+
+#webmenu > div > .ptag > a {
+	position: relative;
+	display: block;
+	line-height: 1.1em;
+	font-size: 0.9em;
+	padding:7px;
+}
+
+#webmenu > div > .ptag > a, .menubar {
+	position: relative;
+	top:30px;
+	left:-7px;
+}
+
+#webmenu > div > .ptag > a:hover {
+	transition: background-color 0.2s;
+	background-color: rgba(255,255,255, 0.1);;
+	background
+}
+
+/*makes it so that when you redirect within this page there's an offset*/
+:target:before {
+	content:"";
+	display:block;
+	margin:-400px 0 0; /* negative fixed header height */
+}
+
+.menubar {
+	height: 1px;
+	width: var(--colwidth);
+	background-color: white;
+	opacity: 0.25;
+}
+
+.menubar:last-child {
+	display: none;
+}
+
+strong {
+	position: relative;
+	top:10px;
+	font-family: 'Palanquin Dark', sans-serif;
+	font-weight: 200;
+	letter-spacing: 0.5px;
+}
+
+/*note that -webkit-,-moz-,-ms-,-o- things are about working on older browsers
+flex is there so that you can control the spans individually(?)*/
+h1 {
+	font-family: 'Fugaz One', serif;
+	font-weight:300;
+	position: absolute;
+	transform: rotate(-7.7deg);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: -webkit-linear-gradient(8deg, #d58da3, #fa8567, #fa9551); 
+	background-image:    -moz-linear-gradient(8deg, #d58da3, #fa8567, #fa9551); 
+	background-image:     -ms-linear-gradient(8deg, #d58da3, #fa8567, #fa9551); 
+	background-image:      -o-linear-gradient(8deg, #d58da3, #fa8567, #fa9551);  
+	background-image:         linear-gradient(8deg, #d58da3, #fa8567, #fa9551); 
+	background-position-y: 1vw;
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;
+	-webkit-flex-direction: column;
+	flex-direction: column;
+	font-size: 17.3vw;
+	left: -2vw;
+	top: calc(270px - 20vw); /*a smaller vw and it will move up as you shrink, a smaller px and it will shift up*/
+}
+
+#secondspan {
+	font-size: 13.7vw;
+	margin-left: -1vw;
+	margin-top: -10.5vw;
+}
+
+h2 {
+	font-family: 'Palanquin Dark', serif;
+	font-weight:300;
+	position: absolute;
+	transform: skew(-4deg) rotate(-4deg);
+	color: transparent;
+	-webkit-background-clip: text;
+	background-clip: text;
+	background-image: -webkit-linear-gradient(50deg, #56c66b, #0c8ab9, #3d6288); 
+	background-image:    -moz-linear-gradient(50deg, #56c66b, #0c8ab9, #3d6288); 
+	background-image:     -ms-linear-gradient(50deg, #56c66b, #0c8ab9, #3d6288); 
+	background-image:      -o-linear-gradient(50deg, #56c66b, #0c8ab9, #3d6288); 
+	background-image:         linear-gradient(50deg, #56c66b, #0c8ab9, #3d6288); 
+	line-height: 1;
+	left:59vw;
+	top:29vh;
+	font-size: 4.4vw;
+}
+
+h3 {
+	font-family: 'Palanquin Dark', serif;
+	font-size: 4vw;
+	color: white;
+	top:83vh;
+	left:19vw;
+	text-align:center;
+	position: absolute;
+	width: 60vw;
+	line-height: 3em;
+}
+
+#home {
+	top: 0px;
+	height: 200vh;
+	right: 0px;
+	background-image: -webkit-linear-gradient(189deg, #94d1f8, #e7e7e7, #e4e586, #7ec76a, #56d285);
+	background-image:    -moz-linear-gradient(189deg, #94d1f8, #e7e7e7, #e4e586, #7ec76a, #56d285);
+	background-image:     -ms-linear-gradient(189deg, #94d1f8, #e7e7e7, #e4e586, #7ec76a, #56d285);
+	background-image:      -o-linear-gradient(189deg, #94d1f8, #e7e7e7, #e4e586, #7ec76a, #56d285);
+	background-image:         linear-gradient(189deg, #94d1f8, #e7e7e7, #e4e586, #7ec76a, #56d285);
+	background-position-y: 58px;
+}
+
+article {
+	background-color:#f5f5f5;
+	width: 100vw;
+	color: #464646;
+	padding: 40vh 10vw 60vh 10vw;
+}
+
+h4 {
+	padding: none;
+	font-family: 'Vidaloka', serif;
+	font-size: 4em;
+	font-weight: 200;
+	width:70vw;
+}
+
+.articlebar {
+	height: 1px;
+	width: 60vw;
+	background-color: black;
+	opacity: 0.32;
+	position: relative;
+	top:-70px;
+}
+
+.info > .ptag, li {
+	font-family: 'Microsoft Yi Baiti', sans-serif;
+	font-size: 1.5em;
+	width:calc(var(--articlewidth) + 200px);
+	margin-bottom: 30px;
+}
+
+.info > .ptag, li, blockquote {
+	position: relative;
+	top:-30px;
+}
+
+sup {
+	font-size: 50%;
+}
+
+sup:hover {
+	background-color: yellow;
+	font-weight: bold;
+}
+
+blockquote {
+	font-family: 'Adobe Garamond Pro', serif;
+	color: #5e5e5e;
+	font-size: 1.1em;
+	line-height:170%;
+	text-align:center;
+	letter-spacing: 0.5px;
+
+	width:var(--articlewidth);
+	margin: 30px 0px;
+	padding-top:20px;
+	padding-bottom:20px;
+	padding-left:100px;
+	padding-right:100px;
+	background-image: linear-gradient(90deg, #f5f5f5, #ededed, #ededed, #f5f5f5);
+}
+
+.viewportshell {
+	/*border:5px solid red;*/
+}
+
+.viewport {
+	display: none;
+	background-attachment: fixed;
+	filter: blur(7px);
+	position: relative;
+	transform: scale(1.00);
+	/*transform-origin:top center;*/
+	/*top:10px;*/
+	overflow: hidden;
+	background-size: cover;
+	background-position: center;
+	height: 100vh;
+	/*box-shadow:   inset 0.5vh 1vh 3vw 0vw rgba(0, 0, 0, 0.8);*/
+	z-index: -1;
+}
+
+#img1,#img7,#img13,#img19 {
+	background-image: url("images/img1.jpg");
+}
+
+#img2,#img8,#img14,#img20 {
+	background-image: url("images/img2.jpg");
+	background-position-y: 65px;
+}
+
+#img3,#img9,#img15,#img21 {
+	background-image: url("images/img3.jpg");
+}
+
+#img4,#img10,#img16 {
+	background-image: url("images/img4.png");
+}
+
+#img5,#img11,#img17 {
+	background-image: url("images/img5.jpg");
+}
+
+#img6,#img12,#img18 {
+	background-image: url("images/img6.jpg");
+	background-position-y: -1550px;
+}
+
+.youtube {
+	width:var(--articlewidth);
+	height:450px;
+}
+
+#greenagenda {
+	width:calc(var(--articlewidth) + 200px);
+	height:600px;
+}
+
+.extlink {
+	background-color: #fcf4c9;
+}
+
+.extlink:hover {
+	background-color: #f97e6b;
+}

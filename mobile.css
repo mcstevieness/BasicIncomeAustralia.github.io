@@ -1,0 +1,240 @@
+/*variable declarations*/
+:root {
+   --colwidth: 260px;
+   --colspacing:40px;
+   --articlewidth:80vw;
+}
+
+body {
+    font-size:18px !important;
+}
+
+.web {
+	display: none;
+}
+
+.mob {
+	display: initial;
+}
+
+header {
+	height:10vh;
+	background-color: #e2e2e2;
+}
+
+#nav, #contact {
+	position: absolute;
+	top:0px;
+	width: 49vw;
+	height: 100%;
+	cursor: pointer;
+}
+
+#nav {
+	left:0px;
+	border-right: 1px #e9e9e9 solid;
+}
+
+#contact {
+	right:0px;
+}
+
+#outercontact, #webmenu {
+	position: fixed;
+	background-image:         linear-gradient(188deg, #d9bede, #9cbcfe, #70d4c8); 
+	width:90vw;
+	height: 77vh;
+	left:5vw;
+	top:12vh;
+	border-radius: 30px;
+	padding: 0px;
+	z-index: 1;
+	color:white;
+	font-family: 'Yu Gothic', sans-serif;
+	padding-top: 10px;
+	box-shadow:    0vh 1vh 4vw 0vw rgba(0, 0, 0, 0.2);
+}
+
+.grid-item {
+	position: absolute;
+	margin: 0px;
+	padding:0px;
+	width:calc(50% - 2px);
+	height:calc(100% /3);
+	cursor: pointer;
+}
+
+.left {
+	left:0px;
+}
+
+.right {
+	right:0px;
+}
+
+#contact1, #contact4 {
+	top:0px;
+}
+
+#contact2, #contact5 {
+	top:calc(100% /3);;
+}
+
+#contact3, #contact6 {
+	top:calc(100% * 2/3);;
+}
+
+#contact1, #contact2, #contact3 {
+	border-right: 1px rgba(255,255,255, 0.5) solid;
+}
+
+#contact1, #contact2, #contact4, #contact5 {
+	border-bottom: 1px rgba(255,255,255, 0.5) solid;
+}
+
+#webmenu {
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding: 0px;
+	margin: 0px;
+	white-space:normal;
+}
+
+#webmenu > div > .ptag > a, .menubar, #hr {
+	display:none;
+}
+
+#col1, #col2, #col3, #col4 {
+	position: initial;
+	left:initial;
+	width: initial;
+}
+
+#webmenu > div > strong, #webmenu > div > .ptag > a {
+	border-bottom: 1px rgba(255,255,255, 0.5) solid;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	width: calc(100% - 30px);
+	font-size: 30px;
+	display: block;
+}
+
+#webmenu > div > strong {
+	padding-left: 40px;
+}
+
+#webmenu > div > .ptag > a {
+	font-weight: 200;
+	padding-left: 60px;
+	background-color: rgba(0,0,0, 0.03);
+}
+
+#webmenu > div > .ptag > a, .menubar, strong {
+	cursor: pointer;
+	top:0px;
+}
+
+#webmenu > div > strong:before {
+	content: "> ";
+}
+
+.closed {
+	transition: max-height 0.7s;
+	max-height: 0px;
+	overflow: hidden;
+}
+
+.open {
+	transition: max-height 0.7s;
+	max-height: 2000px;
+}
+
+.grid-item > img {
+	/*display: none;*/
+    display: block;
+    margin-top: 5vh;
+    margin-left: auto;
+    margin-right: auto;
+	height: 10vh;
+	top:5vw;
+}
+
+h6 {
+	/*position: absolute;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+	font-family: 'Palanquin Dark SemiBold', sans-serif;
+	color: white;
+	font-size: 3vh;
+	text-align:center;
+}
+
+h3 {
+	top:120vh;
+}
+
+h5 {
+	position: relative;
+	top:-6.5vh;
+	line-height: 10vh;
+	font-family: 'Palanquin Dark SemiBold', sans-serif;
+	color: #a7aaab;
+	text-align:center;
+	font-size: 4vh;
+}
+
+h1 {
+	top: calc(500px - 50vw); /*a smaller vw and it will move up as you shrink, a smaller px and it will shift up*/
+	font-size: 27vw;
+	left: -4vw;
+}
+
+#secondspan {
+	font-size: 23vw;
+	margin-left: -1vw;
+	margin-top: -17vw;
+}
+
+h2 {
+	font-size:8.5vw;
+	left:17vw;
+	top: calc(800px - 10vw);
+	transform: skew(-7deg) rotate(-7deg);
+}
+
+article {
+	padding: 35vh 10vw 50vh 10vw;
+}
+
+h4 {
+	font-size: 90px;
+}
+
+.articlebar {
+	width: 80vw;
+}
+
+.info > .ptag, li {
+	font-family: 'Microsoft Yi Baiti', sans-serif;
+	font-size: 50px;
+	width:var(--articlewidth);
+}
+
+blockquote {
+	font-size: 40px;
+	margin-left:10vw;
+	margin-right: 10vw;
+	padding-top:4vw;
+	padding-bottom:4vw;
+	padding-left:0px;
+	position: relative;
+	left:-10vw;
+	width:var(--articlewidth);
+}
+
+.viewport {
+	height: 80vh;
+	background-attachment: scroll;
+}
