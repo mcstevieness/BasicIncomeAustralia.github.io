@@ -128,19 +128,27 @@ header > a > img {
 	background-image:         linear-gradient(188deg, #d9bede, #9cbcfe, #70d4c8); 
 	border-radius: 10px;
 	width:1156px;
-	height: 597px;
+	height: 600px;
 	top:82px;
 	left:25px;
 	z-index: 1;
 	color:white;
 	font-family: 'Yu Gothic', sans-serif;
 	padding-top: 10px;
-	box-shadow:    0vh 1vh 4vw 0vw rgba(0, 0, 0, 0.2);
+	box-shadow: 0vh 1vh 4vw 0vw rgba(0, 0, 0, 0.2);
+	max-height: calc(100vh - 120px);
+	overflow-y: auto;
+	overflow-x: hidden;
+	background-attachment: scroll;
 }
 
 #col1 {
 	position: absolute;
 	left:25px;
+	width: calc(var(--colwidth) - 50px);
+}
+
+#webmenu > #col1 > .ptag > .menubar {
 	width: calc(var(--colwidth) - 50px);
 }
 
@@ -175,8 +183,8 @@ header > a > img {
 #webmenu > div > .ptag > a {
 	position: relative;
 	display: block;
-	line-height: 1.1em;
-	font-size: 0.9em;
+	line-height: 1.2em;
+	/*font-size: 0.9em;*/
 	padding:7px;
 }
 
@@ -303,11 +311,20 @@ article {
 }
 
 h4 {
-	padding: none;
+	padding: 0px 0px 10px 0px;
+	/*font-family: 'Fugaz One', serif;
+	text-transform: uppercase;
+	font-size: 3em;*/
 	font-family: 'Vidaloka', serif;
 	font-size: 4em;
 	font-weight: 200;
 	width:70vw;
+}
+
+h5 {
+	font-size: inherit;
+	display: inline;
+	font-weight: 1000;
 }
 
 .articlebar {
