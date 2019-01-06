@@ -321,9 +321,13 @@ h4 {
 	width:70vw;
 }
 
-h5 {
+/*h7 {
 	font-size: inherit;
 	display: inline;
+	font-weight: 1000;
+}*/
+
+.bold {
 	font-weight: 1000;
 }
 
