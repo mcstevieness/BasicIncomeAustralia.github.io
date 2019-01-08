@@ -45,7 +45,7 @@ button {
 
 /*variable declarations*/
 :root {
-   --colwidth: 260px;
+   --colwidth: 24%;
    --colspacing:40px;
    --articlewidth:800px;
 }
@@ -144,29 +144,26 @@ header > a > img {
 
 #col1 {
 	position: absolute;
-	left:25px;
+	left:3%;
 	width: calc(var(--colwidth) - 50px);
 }
 
-#webmenu > #col1 > .ptag > .menubar {
-	width: calc(var(--colwidth) - 50px);
-}
 
 #col2 {
 	position: absolute;
-	left:260px;
+	left:25%;
 	width: var(--colwidth);
 }
 
 #col3 {
 	position: absolute;
-	left:570px;
+	left:50%;
 	width: var(--colwidth);
 }
 
 #col4 {
 	position: absolute;
-	left:870px;
+	left:75%;
 	width: var(--colwidth);
 }
 
@@ -175,7 +172,7 @@ header > a > img {
 	top:60px;
 	left:25px;
 	height: 1px;
-	width: 1100px;
+	width: 94%;
 	background-color: white;
 	opacity: 0.7;
 }
@@ -209,7 +206,7 @@ header > a > img {
 
 .menubar {
 	height: 1px;
-	width: var(--colwidth);
+	width: 95%;
 	background-color: white;
 	opacity: 0.25;
 }
@@ -252,7 +249,7 @@ h1 {
 
 	justify-content: flex-start;
 	align-items: flex-start;
-	
+
 	font-size: 17.3vw;
 	left: -2vw;
 	top: calc(270px - 20vw); /*a smaller vw and it will move up as you shrink, a smaller px and it will shift up*/

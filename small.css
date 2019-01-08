@@ -1,8 +1,21 @@
-/*header {
-	background-color: red;
+header {
+	/*background-color: red;*/
 }
 
 .info > .ptag {
-	background-color: red;
-	padding-right: 500px;
-}*/
+	/*background-color: red;*/
+	width: 80vw;
+}
+
+blockquote {
+	/*border:solid red 5px;*/
+	width: 60vw;
+}
+
+#webmenu {
+	width: 93vw;
+}
+
+#webmenu > div > .ptag > a {
+	font-size: 1.3vw;
+}
