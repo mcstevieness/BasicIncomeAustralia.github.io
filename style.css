@@ -204,7 +204,7 @@ header > a > img {
 :target:before {
 	content:"";
 	display:block;
-	margin:-400px 0 0; /* negative fixed header height */
+	margin:-35vh 0 0; 
 }
 
 .menubar {
@@ -249,6 +249,10 @@ h1 {
 	display: flex;
 	-webkit-flex-direction: column;
 	flex-direction: column;
+
+	justify-content: flex-start;
+	align-items: flex-start;
+	
 	font-size: 17.3vw;
 	left: -2vw;
 	top: calc(270px - 20vw); /*a smaller vw and it will move up as you shrink, a smaller px and it will shift up*/
@@ -305,7 +309,9 @@ h3 {
 
 article {
 	background-color:#f5f5f5;
-	width: 100vw;
+	/*border: 5px solid red;
+	width: calc(100vw-20px);*/
+	width:100vw;
 	color: #464646;
 	padding: 40vh 10vw 60vh 10vw;
 }
