@@ -5,11 +5,13 @@
 	<title>Basic Income Australia</title>
 	<script src="script.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<link rel="stylesheet" type="text/css" href="small.css" media="screen and (orientation: landscape) and (max-width:78em)"/>
 	<link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (orientation: portrait)"/>
 	<link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width:900px)"/>
-	<link rel="stylesheet" type="text/css" href="small.css" media="screen and (orientation: landscape) and (max-width:78em)"/>
-	<link rel="stylesheet" type="text/css" href="safari.css" media="not all and (min-resolution:.001dpcm)"/>
+	<link rel="stylesheet" type="text/css" href="safari.css" media="not all and (min-resolution:.001dpcm)"/>  <!-- safari 10+ -->
+	<link rel="stylesheet" type="text/css" href="safari.css" media="screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)"/> <!-- safari 6-10 -->
 	
+
 
 	<!-- <link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width:1210px)"/> -->
 	<link href="https://fonts.googleapis.com/css?family=ABeeZee|Fira+Sans|Libre+Franklin|Merriweather+Sans|Oxygen|Poppins|Prompt|Roboto|Rubik|Ubuntu" rel="stylesheet">
@@ -19,23 +21,23 @@
 	<header class="web">
 		<img src="images/hamburger.png" id="hamburger" onclick="burgerclick()">
 
-		<a href="http://meetup.com/BasicIncomeAu">COME TO AN EVENT</a>
-		<a href="http://meetup.com/BasicIncomeAu"><img src="images/meetuplogo.png"></a>
+		<a href="http://meetup.com/BasicIncomeAu" id="meetuptext">COME TO AN EVENT</a>
+		<a href="http://meetup.com/BasicIncomeAu"><img src="images/meetuplogo.png" id="meetuplogo"></a>
 
-		<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLWRiNjY1YzdiZDdmYWIwNDFiZDgxZWE4ZWVlODZjMzFiMzZkNjJjNWVkNmJkMDZjNzMxNGExN2JmNDg0MDNiODg">CHAT</a>
-		<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLWRiNjY1YzdiZDdmYWIwNDFiZDgxZWE4ZWVlODZjMzFiMzZkNjJjNWVkNmJkMDZjNzMxNGExN2JmNDg0MDNiODg"><img src="images/slacklogo.png"></a>
+		<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLWRiNjY1YzdiZDdmYWIwNDFiZDgxZWE4ZWVlODZjMzFiMzZkNjJjNWVkNmJkMDZjNzMxNGExN2JmNDg0MDNiODg" id="slacktext">CHAT</a>
+		<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLWRiNjY1YzdiZDdmYWIwNDFiZDgxZWE4ZWVlODZjMzFiMzZkNjJjNWVkNmJkMDZjNzMxNGExN2JmNDg0MDNiODg"><img src="images/slacklogo.png" id="slacklogo"></a>
 
-		<a href="http://patreon.com/BasicIncomeAu">DONATE</a>
-		<a href="http://patreon.com/BasicIncomeAu"><img src="images/patreonlogo.png"></a>
+		<a href="http://patreon.com/BasicIncomeAu" id="patreontext">DONATE</a>
+		<a href="http://patreon.com/BasicIncomeAu"><img src="images/patreonlogo.png" id="patreonlogo"></a>
 
-		<a href="https://www.facebook.com/BasicIncomeAu/">FACEBOOK</a>
-		<a href="https://www.facebook.com/BasicIncomeAu/"><img src="images/facebooklogo.png"></a>
+		<a href="https://www.facebook.com/BasicIncomeAu/" id="facebooktext">FACEBOOK</a>
+		<a href="https://www.facebook.com/BasicIncomeAu/"><img src="images/facebooklogo.png" id="facebooklogo"></a>
 
-		<a href="https://twitter.com/basicincome_au">TWITTER</a>
-		<a href="https://twitter.com/basicincome_au"><img src="images/twitterlogo.png"></a>
+		<a href="https://twitter.com/basicincome_au" id="twittertext">TWITTER</a>
+		<a href="https://twitter.com/basicincome_au"><img src="images/twitterlogo.png" id="twitterlogo"></a>
 
-		<a href="mailto:BasicIncomeAu@gmail.com">EMAIL</a>
-		<a href="mailto:BasicIncomeAu@gmail.com"><img src="images/emaillogo.png"></a>
+		<a href="mailto:BasicIncomeAu@gmail.com" id="emailtext">EMAIL</a>
+		<a href="mailto:BasicIncomeAu@gmail.com"><img src="images/emaillogo.png" id="emaillogo"></a>
 	</header>
 
 	<header class="mob">

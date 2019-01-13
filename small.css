@@ -19,3 +19,11 @@ blockquote {
 #webmenu > div > .ptag > a {
 	font-size: 1.3vw;
 }
+
+header > a {
+	margin-left: 1.1vw;
+}
+
+header > a > img {
+	margin-right: 1vw;
+}
