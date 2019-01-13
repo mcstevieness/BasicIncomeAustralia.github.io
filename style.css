@@ -255,6 +255,18 @@ h1 {
 	top: calc(270px - 20vw); /*a smaller vw and it will move up as you shrink, a smaller px and it will shift up*/
 }
 
+.safari {
+	display:none;
+}
+
+#logoimg {
+	width:53vw;
+	position: absolute;
+	left: -2.7vw;
+	top: calc(250px - 5vw); /*a smaller vw and it will move up as you shrink, a smaller px and it will shift up*/
+	/*border: solid red 5px;*/
+}
+
 #secondspan {
 	font-size: 13.7vw;
 	margin-left: -1vw;
