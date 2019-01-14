@@ -19,7 +19,8 @@ body {
 
 header {
 	height:10vh;
-	background-color: #e2e2e2;
+	background-color: #f0f0f0;
+	/*background-color: #e2e2e2;*/
 }
 
 #nav, #contact {
