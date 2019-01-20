@@ -1,0 +1,14 @@
+h1 {
+	display: none;
+}
+
+.safari {
+	display:block;
+}
+
+#logoimg {
+	width:80vw;
+	top: calc(500px - 50vw); /*a smaller vw and it will move up as you shrink, a smaller px and it will shift up*/
+	font-size: 27vw;
+	left: -4vw;
+}
