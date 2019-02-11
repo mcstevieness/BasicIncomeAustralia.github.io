@@ -116,7 +116,7 @@ header {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	width: calc(100% - 30px);
-	font-size: 50px;
+	font-size: 250%;
 	display: block;
 }
 
