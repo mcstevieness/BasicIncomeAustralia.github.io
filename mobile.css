@@ -241,7 +241,7 @@ blockquote {
 }
 
 .convenor > h4 {
-	font-size: 4.5em;
+	font-size: 3.5em;
 }
 
 .convenor > img {
@@ -254,6 +254,7 @@ blockquote {
 
 .convenortext {
 	margin-top: 100px;
+	margin-bottom: 300px;
 	top:0px;
 	left:0px;
 	width:var(--articlewidth);
