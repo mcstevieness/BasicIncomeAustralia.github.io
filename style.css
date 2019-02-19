@@ -466,19 +466,19 @@ blockquote {
 	background-color: #f97e6b;
 }
 
-.convenor {
+.convener {
 	/*border: solid black 1px;*/
 	/*margin-bottom: 200px;*/
 }
 
-.convenor > h4 {
+.convener > h4 {
 	font-size: 2.5em;
 	position: relative;
 	top:-20px;
 
 }
 
-.convenortext {
+.convenertext {
 	position: relative;
 	font-family: 'Microsoft Yi Baiti', sans-serif;
 	font-size: 1.5em;

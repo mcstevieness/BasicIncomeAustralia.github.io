@@ -240,20 +240,20 @@ blockquote {
 	background-attachment: scroll;
 }
 
-.convenor > h4 {
+.convener > h4 {
 	font-size: 3.5em;
 	text-align: center;
 }
 
-.convenor > img {
+.convener > img {
 	width: 80%;
 }
 
-.convenor > .ptag {
+.convener > .ptag {
 	font-size: 50px;
 }
 
-.convenortext {
+.convenertext {
 	margin-top: 100px;
 	margin-bottom: 300px;
 	top:0px;
