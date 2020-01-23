@@ -12,4 +12,5 @@ jobs:
       with:
         node-version: '12.x'
     - run: ls
-    - run: npx ipfs-deploy ../BasicIncomeAustralia.github.io -O -C
+    - run: rm .git -rf
+    - run: npx ipfs-deploy ../BasicIncomeAustralia.github.io -O -C -p infura
