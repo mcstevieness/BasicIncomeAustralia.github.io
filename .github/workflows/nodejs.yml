@@ -13,7 +13,7 @@ jobs:
         node-version: '12.x'
     - run: ls
     - run: rm .git -rf
-    - run: npx ipfs-deploy ../BasicIncomeAustralia.github.io -O -C -p infura
+    - run: npx ipfs-deploy ../BasicIncomeAustralia.github.io -O -C -p pinata
       env: 
         IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__API_KEY }}
         IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__SECRET_API_KEY }}
