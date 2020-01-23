@@ -7,10 +7,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Deploy to IPFS
-      env: # Or as an environment variable
-        IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__API_KEY }}
-        IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__SECRET_API_KEY }}
     - uses: actions/checkout@v1
     - uses: actions/setup-node@v1
       with:
@@ -18,3 +14,7 @@ jobs:
     - run: ls
     - run: rm .git -rf
     - run: npx ipfs-deploy ../BasicIncomeAustralia.github.io -O -C -p infura
+      env: 
+        IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__API_KEY }}
+        IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__SECRET_API_KEY }}
+
