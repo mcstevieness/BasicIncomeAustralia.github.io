@@ -9,6 +9,10 @@ function burgerclick() {
 	} else {
 		document.getElementById("webmenu").className = "invisible";
 	}
+
+
+	// Each sample will be comprised of multiple "segments".
+
 }
 
 function contactclick() {	
@@ -85,7 +89,7 @@ function init() {
 	// document.getElementById("contact").touchstart = contactclick;
 
 	document.getElementById("contact1").onclick = function() {window.location="http://meetup.com/BasicIncomeAu";};
-	document.getElementById("contact2").onclick = function() {window.location="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLWRiNjY1YzdiZDdmYWIwNDFiZDgxZWE4ZWVlODZjMzFiMzZkNjJjNWVkNmJkMDZjNzMxNGExN2JmNDg0MDNiODg";};
+	document.getElementById("contact2").onclick = function() {window.location="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLTczYTczMjg5MTUzZjRkZDkxNWVlMjExZDE0ZWYyYjA3NTA2NmI1MTdmY2RkNmFiOTVkNTMyNDFjZmFkNjIwNmM";};
 	document.getElementById("contact3").onclick = function() {window.location="https://www.facebook.com/BasicIncomeAu";};
 	document.getElementById("contact4").onclick = function() {window.location="http://patreon.com/BasicIncomeAu";};
 	document.getElementById("contact5").onclick = function() {window.location="mailto:BasicIncomeAu@gmail.com";};
