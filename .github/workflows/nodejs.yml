@@ -1,0 +1,20 @@
+name: Node CI
+
+on: [push]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+    - run: ls
+    - run: rm .git -rf
+    - run: npx ipfs-deploy ../BasicIncomeAustralia.github.io -O -C -p pinata --siteDomain "BasicIncomeAustralia.github.io"
+      env: 
+        IPFS_DEPLOY_PINATA__API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__API_KEY }}
+        IPFS_DEPLOY_PINATA__SECRET_API_KEY: ${{ secrets.IPFS_DEPLOY_PINATA__SECRET_API_KEY }}
+
