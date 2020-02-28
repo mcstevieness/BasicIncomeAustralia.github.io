@@ -1,3 +1,8 @@
+@font-face {
+	font-family: 'Inter';
+	src: url('fonts/Inter');
+}
+
 :root {
 	--backgroundColour: rgb(60, 126, 211);
 	--maxLine: rgb(154, 185, 243);
