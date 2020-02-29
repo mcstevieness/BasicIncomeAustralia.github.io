@@ -8,6 +8,7 @@ let slider2 = document.querySelector('#slider2');
 let currentlyDragging = false;
 
 function moveSlider(e) {
+	e.preventDefault();
 	if (e.type === "touchstart") {
 		if (currentlyDragging && containerWidth/e.touches[0].clientY < 5 && containerWidth/e.touches[0].clientY > 2.4) {
 			slider.style.cursor = "grabbing";
@@ -24,11 +25,13 @@ function moveSlider(e) {
 }
 
 function cancel(e) {
+	e.preventDefault();
 	slider.style.cursor = "grab";
 	currentlyDragging = false;
 }
 
 function startDragging(e) {
+	e.preventDefault();
 	currentlyDragging = true;
 	moveSlider(e);
 }
