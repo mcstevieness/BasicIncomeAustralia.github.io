@@ -8,11 +8,19 @@ let slider2 = document.querySelector('#slider2');
 let currentlyDragging = false;
 
 function moveSlider(e) {
-	if (currentlyDragging && containerWidth/e.clientY < 5 && containerWidth/e.clientY > 2.4) {
+	if (e.type === "touchstart") {
+		if (currentlyDragging && containerWidth/e.touches[0].clientY < 5 && containerWidth/e.touches[0].clientY > 2.4) {
+			slider.style.cursor = "grabbing";
+			slider.style.transform = `translateX(${0.66*containerWidth}px) translateY(${e.touches[0].clientY-(0.03) * containerWidth}px)`;
+		} 
+	} else {
+		if (currentlyDragging && containerWidth/e.clientY < 5 && containerWidth/e.clientY > 2.4) {
+			slider.style.cursor = "grabbing";
+			slider.style.transform = `translateX(${0.66*containerWidth}px) translateY(${e.clientY-(0.03) * containerWidth}px)`;
+		} 
+	}
 
-		slider.style.cursor = "grabbing";
-		slider.style.transform = `translateX(${0.66*containerWidth}px) translateY(${e.clientY-(0.03) * containerWidth}px)`;
-	} 
+	
 }
 
 function cancel(e) {
