@@ -32,7 +32,10 @@ function cancel(e) {
 
 function startDragging(e) {
 	e.preventDefault();
-	currentlyDragging = true;
+	if (e.target === slider) {
+		currentlyDragging = true;
+	}
+	
 	moveSlider(e);
 }
 
@@ -45,13 +48,13 @@ function init() {
 	slider.style.transform = `translateX(${0.66*containerWidth}px) translateY(${0.3 * containerWidth}px)`;
 	slider2.style.transform = `translateX(${0.79*containerWidth}px) translateY(${0.25 * containerWidth}px)`;
 
-	slider.addEventListener("touchstart", startDragging, false);
+	document.addEventListener("touchstart", startDragging, false);
     document.addEventListener("touchend", cancel, false);
-    slider.addEventListener("touchmove", moveSlider, false);
+    document.addEventListener("touchmove", moveSlider, false);
 
-    slider.addEventListener("mousedown", startDragging, false);
+    document.addEventListener("mousedown", startDragging, false);
     document.addEventListener("mouseup", cancel, false);
-    slider.addEventListener("mousemove", moveSlider, false);
+    document.addEventListener("mousemove", moveSlider, false);
 
 }
 
