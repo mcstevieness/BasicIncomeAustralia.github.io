@@ -10,7 +10,7 @@ let currentlyDragging = false;
 
 function moveSlider(e) {
 	e.preventDefault();	
-	if (e.type === "touchstart") {
+	if (e.type === "touchstart" || e.type === "touchmove") {
 		if (currentlyDragging && containerWidth/e.touches[0].clientY < 5 && containerWidth/e.touches[0].clientY > 2.4) {
 			h1.innerHTML = "👍";
 			slider.style.cursor = "grabbing";
