@@ -344,6 +344,10 @@ function renderGraph() {
 
 	// console.log("after: " + calculateSum());
 
+	newObjArray.sort(function(a, b) {
+		return parseFloat(a.avgWealthPerPersonInPercentile) - parseFloat(b.avgWealthPerPersonInPercentile);
+	});
+
 	averagingFilter();
 
 	// console.log("filtered: " + calculateSum());
