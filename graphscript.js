@@ -570,24 +570,24 @@ function init() {
 		renderFlex(flex)
 	})
 
-	let taxationBox = document.querySelector("#taxation");
-	taxationBox.addEventListener('click',(e)=>{
-		taxationTransform = taxationBox.checked;
-		realisticTransform = taxationBox.checked;
-		renderGraph();
-	})
+	// let taxationBox = document.querySelector("#taxation");
+	// taxationBox.addEventListener('click',(e)=>{
+	// 	taxationTransform = taxationBox.checked;
+	// 	realisticTransform = taxationBox.checked;
+	// 	renderGraph();
+	// })
 
-	let realisticBox = document.querySelector("#realistic");
-	realisticBox.addEventListener('click',(e)=>{
-		realisticTransform = realisticBox.checked;
-		renderGraph();
-	})
+	// let realisticBox = document.querySelector("#realistic");
+	// realisticBox.addEventListener('click',(e)=>{
+	// 	realisticTransform = realisticBox.checked;
+	// 	renderGraph();
+	// })
 
-	let removeTrapBox = document.querySelector("#removeTrap");
-	removeTrapBox.addEventListener('click',(e)=>{
-		removeTrap = removeTrapBox.checked;
-		renderGraph();
-	})
+	// let removeTrapBox = document.querySelector("#removeTrap");
+	// removeTrapBox.addEventListener('click',(e)=>{
+	// 	removeTrap = removeTrapBox.checked;
+	// 	renderGraph();
+	// })
 	
 	renderGraph();
 
