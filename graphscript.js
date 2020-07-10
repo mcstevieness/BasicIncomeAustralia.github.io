@@ -10,9 +10,9 @@ let spaceWidth = 0;
 
 let scaleTransform = 1;
 let floorTransform = 0;
-let taxationTransform = false;
-let realisticTransform = false;
-let removeTrap = false;
+let taxationTransform = true;
+let realisticTransform = true;
+let removeTrap = true;
 let flexPoint = 50;
 
 let containerWidth = 858;
