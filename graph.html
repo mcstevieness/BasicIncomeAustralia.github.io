@@ -8,10 +8,16 @@
 </head>
 
 <body>
+	<img src="images/graphbackground.png">
+	<img id="slider1" class="slider" src="images/draggable1.png" draggable="false">
+	<img id="slider2" class="slider" src="images/draggable2.png" draggable="false">
+	<img id="slider3" class="slider" src="images/draggable3.png" draggable="false">
 	<svg style="width: 700px; height: 700px;"></svg>
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<form>
-		<input type="range" id="scalerRange" min="1" max="12" step="0.1" oninput="renderScale(this.value)" onchange="renderScale(this.value)">
-		<input type="range" id="floorRange" min="0" max="12" step="0.1" oninput="renderFloor(this.value)" onchange="renderFloor(this.value)">
+		<!-- <input type="range" id="scalerRange" min="1" max="12" step="0.1" oninput="renderScale(this.value)" onchange="renderScale(this.value)">
+		<input type="range" id="floorRange" min="0" max="12" step="0.1" oninput="renderFloor(this.value)" onchange="renderFloor(this.value)"> -->
 		<label for="realistic" style="display: none;">realistic?</label>
 			<input type="checkbox" value="realistic" name="realistic" id="realistic" style="display: none;" checked/>
 		<label for="taxation">with taxation?</label>
@@ -19,7 +25,7 @@
 		<label for="removeTrap">remove poverty trap?</label>
 			<input type="checkbox" value="removeTrap" name="removeTrap" id="removeTrap"/>
 			<br><br><br><br><br><br><br><br><br><br><br>
-		<input type="range" id="flexPoint" min="1" max="99" step="0.1" oninput="renderFlex(this.value)" onchange="renderFlex(this.value)">
+		<!-- <input type="range" id="flexPoint" min="1" max="99" step="0.1" oninput="renderFlex(this.value)" onchange="renderFlex(this.value)"> -->
 	</form>
 </body>
 	<script src="graphscript.js"></script>

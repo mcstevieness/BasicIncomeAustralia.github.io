@@ -4,7 +4,7 @@ let newObjArray = [];
 let svg = document.querySelector('svg');
 let avgHouseholdSizeInAus = 2.6;
 let distanceFromLeft = 20;
-let distanceFromTop = 600;
+let distanceFromTop = 650;
 let barwidth = 5;
 let spaceWidth = 0;
 
@@ -14,6 +14,107 @@ let taxationTransform = false;
 let realisticTransform = false;
 let removeTrap = false;
 let flexPoint = 50;
+
+let containerWidth = 858;
+
+let slider1 = document.querySelector('#slider1');
+let slider2 = document.querySelector('#slider2');
+let slider3 = document.querySelector('#slider3');
+
+// added in 10th July 2020
+class DragDetector {
+	constructor() {
+		this.dragObjects = [];
+		this.dragBoundaries = [];
+		this.dragFunctions = [];
+		this.dragObjIndex = -1;
+
+		// by using .bind(this) we make sure that the "this" used for the event listener is the DragDetector object, not the document object
+		document.addEventListener("touchstart", this.startDragging.bind(this), 	false);
+		document.addEventListener("touchend", 	this.cancel.bind(this), 		false);
+		document.addEventListener("touchmove", 	this.moveSlider.bind(this), 	false);
+
+		document.addEventListener("mousedown", 	this.startDragging.bind(this), 	false);
+		document.addEventListener("mouseup", 	this.cancel.bind(this), 		false);
+		document.addEventListener("mousemove", 	this.moveSlider.bind(this), 	false);
+	}
+
+	moveSlider(e) {
+		e.preventDefault();	
+
+		// only react if there's a currently selected object
+		if (this.dragObjIndex >= 0) {
+			// these two are used so that as you drag you drag the middle of the object, not the corners
+			let draggerHeight = this.dragObjects[this.dragObjIndex].height/containerWidth;
+			let draggerWidth = this.dragObjects[this.dragObjIndex].width/containerWidth;
+			let mode = this.dragBoundaries[this.dragObjIndex].mode;
+			this.dragObjects[this.dragObjIndex].style.cursor = "grabbing";
+			let proportion;
+			let cursorPoint;
+			// this is the only difference between the touch and mouse equivalents
+			if (e.type === "touchstart" || e.type === "touchmove") {
+				cursorPoint = e.touches[0];
+			} else {
+				cursorPoint = e;
+			}
+	
+
+			// mouse position as a proportion of the width
+			console.log("x fraction: " + cursorPoint.clientX/containerWidth);
+			console.log("y fraction: " + cursorPoint.clientY/containerWidth);
+
+			// console.log("max: " + this.dragBoundaries[this.dragObjIndex].max);
+			// console.log("min: " + this.dragBoundaries[this.dragObjIndex].min);
+			// console.log("static: " + this.dragBoundaries[this.dragObjIndex].static)
+
+			if (mode=="vertical") {
+				if (cursorPoint.clientY/containerWidth < this.dragBoundaries[this.dragObjIndex].max && cursorPoint.clientY/containerWidth > this.dragBoundaries[this.dragObjIndex].min) {
+					this.dragObjects[this.dragObjIndex].style.transform = `translateX(${this.dragBoundaries[this.dragObjIndex].static*containerWidth}px) translateY(${cursorPoint.clientY-(draggerWidth/2)*containerWidth}px)`;
+					// execute callback
+					proportion = ((cursorPoint.clientY/containerWidth)-this.dragBoundaries[this.dragObjIndex].min)/(this.dragBoundaries[this.dragObjIndex].max-this.dragBoundaries[this.dragObjIndex].min)
+					// inverted because by default the top value is the lowest and the bottom is the highest
+					this.dragFunctions[this.dragObjIndex](1-proportion);
+				} 
+			} else {
+				if (cursorPoint.clientX/containerWidth < this.dragBoundaries[this.dragObjIndex].max && cursorPoint.clientX/containerWidth > this.dragBoundaries[this.dragObjIndex].min) {
+					this.dragObjects[this.dragObjIndex].style.transform = `translateX(${cursorPoint.clientX-(draggerWidth/2)*containerWidth}px) translateY(${this.dragBoundaries[this.dragObjIndex].static*containerWidth}px)`;
+					// execute callback
+					proportion = ((cursorPoint.clientX/containerWidth)-this.dragBoundaries[this.dragObjIndex].min)/(this.dragBoundaries[this.dragObjIndex].max-this.dragBoundaries[this.dragObjIndex].min)
+					this.dragFunctions[this.dragObjIndex](proportion);
+				} 
+			}
+		}
+	}
+
+	// mousedown or touchstart
+	startDragging(e) {
+		e.preventDefault();
+		// if the clicked element is in our list of things to listen for
+		if (this.dragObjects.includes(e.target)) {
+			this.dragObjIndex = this.dragObjects.indexOf(e.target);
+		} 
+		this.moveSlider(e);
+	}
+
+	// mouseup or touchend
+	cancel(e) {
+		e.preventDefault();
+		if (this.dragObjIndex >= 0) {
+			this.dragObjects[this.dragObjIndex].style.cursor = "default";
+			this.dragObjIndex = -1;
+		}
+	}
+
+	// dragD.addDragObject(slider,{mode:"vertical",max:5,min:2.4,static:0.66},(proportion)=>{
+	// 	console.log(proportion)
+	// })
+	// note that in your experiene the min, max and static values are best found through experimentation
+	addDragObject(HTMLobject,dragBoundaries,callback) {
+		this.dragObjects.push(HTMLobject);
+		this.dragBoundaries.push(dragBoundaries);
+		this.dragFunctions.push(callback);
+	}
+}
 
 // 
 // function loadInitialArray() {
@@ -230,7 +331,7 @@ function renderLineAndText(name,position,colour,scalingFactor) {
     rect.setAttribute("y", SVGRect.y-5);
     rect.setAttribute("width", SVGRect.width+10);
     rect.setAttribute("height", SVGRect.height+10);
-	rect.setAttribute("fill", "rgba(255, 255, 255, 1)");
+	rect.setAttribute("fill", "var(--markerBackground)");
 	rect.setAttribute("stroke", `${colour}`);
     svg.insertBefore(rect, topText);
 }
@@ -396,7 +497,9 @@ function renderGraph() {
 	pathToAdd.id = "path";  
 	svg.append(pathToAdd);
 	pathToAdd.setAttribute("d", pathString);
-	pathToAdd.setAttribute("fill", "var(--backgroundColour)");
+	pathToAdd.setAttribute("fill", "var(--graphFill)");
+	pathToAdd.setAttribute("stroke", "var(--graphStroke)");
+	pathToAdd.setAttribute("stroke-width", "1px");
 
 	
 	renderLineAndText("top",newObjArray[99].avgWealthPerPersonInPercentile,"var(--maxLine)",scalingFactor)
@@ -412,6 +515,7 @@ function renderGraph() {
 	renderLineAndText("poverty",povertyLineValue,"var(--povertyLine)",scalingFactor)
 
 	renderLineAndText("floor",floorValue,"var(--floorLine)",scalingFactor)
+	console.log("just rendered all of the lines")
 }
 
 function renderScale(rangeValue) {
@@ -431,8 +535,40 @@ function renderFlex(flexValue) {
 
 
 function init() {
-	document.querySelector("#scalerRange").value = 1;
-	document.querySelector("#floorRange").value = 0;
+	// document.querySelector("#scalerRange").value = 1;
+	// document.querySelector("#floorRange").value = 0;
+
+	// this allows it to theoretically scale as the container scales
+	slider1.style.width = `${(53/858) * containerWidth}px`;
+	slider2.style.width = `${(50/858) * containerWidth}px`;
+	slider3.style.width = `${(54/858) * containerWidth}px`;
+	
+	slider1.style.transform = `translateX(${0.065*containerWidth}px) translateY(${0.69 * containerWidth}px)`;
+	slider2.style.transform = `translateX(${0.1*containerWidth}px) translateY(${0.79 * containerWidth}px)`;
+	slider3.style.transform = `translateX(${0.43*containerWidth}px) translateY(${0.92 * containerWidth}px)`;
+
+	let dragD = new DragDetector();
+	dragD.addDragObject(slider1,{mode:"vertical",max:0.719,min:0.19,static:0.066},(proportion)=>{
+		let scaling = (proportion*11)+1;
+		// run the renderScale function with a scaling value from 1-12
+		renderScale(scaling);
+	})
+	dragD.addDragObject(slider2,{mode:"horizontal",max:0.817,min:0.12,static:0.79},(proportion)=>{
+		// the cursor never gets to 0 exactly so if it gets close then snap to 0;
+		if (proportion < 0.001) {
+			proportion = 0;
+		}
+		let height = proportion*12;
+		// run renderFloor function with an input from 0-12
+		renderFloor(height)
+	})
+	dragD.addDragObject(slider3,{mode:"horizontal",max:0.73,min:0.2,static:0.92},(proportion)=>{
+		// the cursor never gets to 0 exactly so if it gets close then snap to 0;
+		let flex = (proportion*91);
+		console.log(flex);
+		// run renderFlex function with an input from 1-99
+		renderFlex(flex)
+	})
 
 	let taxationBox = document.querySelector("#taxation");
 	taxationBox.addEventListener('click',(e)=>{

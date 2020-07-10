@@ -1,10 +1,13 @@
-@font-face {
+/* @font-face {
 	font-family: 'Inter';
 	src: url('fonts/Inter');
-}
+} */
+/* some kind of error getting Inter in, it resulted in the box sizes being the wrong size initially */
 
 :root {
-	--backgroundColour: rgb(60, 126, 211);
+	--graphFill: rgb(58, 210, 126);
+	--graphStroke: rgb(38, 160, 104);
+	--markerBackground: rgba(255,255,255,1);
 	--maxLine: rgb(154, 185, 243);
 	--almostLine: rgb(20, 168, 119);
 	--nonAverageLine: rgb(85, 175, 90);
@@ -24,4 +27,19 @@ html, body {
 
 input[type="range"] {
 	transform: rotate(270deg);
+}
+
+img {
+	position: absolute;
+	z-index: -1;
+}
+
+svg {
+	/* padding-top: 60px; */
+	padding-left: 130px;
+}
+
+.slider {
+	cursor: grab;
+	z-index: 3;
 }
