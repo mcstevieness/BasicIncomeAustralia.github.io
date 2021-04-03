@@ -3,524 +3,496 @@
 
 <head>
 	<title>Basic Income Australia</title>
-	<script src="script.js"></script>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="preload" href="fonts/PalanquinDark-Regular.ttf" as="font" crossorigin="anonymous" />
 	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<link rel="stylesheet" type="text/css" href="small.css" media="screen and (orientation: landscape) and (max-width:78em)"/>
+	<!-- <link rel="stylesheet" type="text/css" href="small.css" media="screen and (orientation: landscape) and (max-width:78em)"/>
 	<link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (orientation: portrait)"/>
-	<link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width:900px)"/>
-	<link rel="stylesheet" type="text/css" href="safari.css" media="not all and (min-resolution:.001dpcm)"/>  <!-- safari 10+ -->
-	<link rel="stylesheet" type="text/css" href="safari.css" media="screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)"/> <!-- safari 6-10 -->
-
+	<link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width:900px)"/> -->
+	<!-- <link rel="stylesheet" type="text/css" href="safari.css" media="not all and (min-resolution:.001dpcm)"/>  /
+	<link rel="stylesheet" type="text/css" href="safari.css" media="screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)"/> safari 6-10 -->
 	<!-- <link rel="stylesheet" type="text/css" href="mobile.css" media="screen and (max-width:1210px)"/> -->
-	<link href="https://fonts.googleapis.com/css?family=ABeeZee|Fira+Sans|Libre+Franklin|Merriweather+Sans|Oxygen|Poppins|Prompt|Roboto|Rubik|Ubuntu" rel="stylesheet">
+	
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-	<header class="web">
-		<img src="images/hamburger.png" id="hamburger" onclick="burgerclick()">
-
-		<a href="http://meetup.com/BasicIncomeAu" id="meetuptext">COME TO AN EVENT</a>
-		<a href="http://meetup.com/BasicIncomeAu"><img src="images/meetuplogo.png" id="meetuplogo"></a>
-
-		<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLTczYTczMjg5MTUzZjRkZDkxNWVlMjExZDE0ZWYyYjA3NTA2NmI1MTdmY2RkNmFiOTVkNTMyNDFjZmFkNjIwNmM" id="slacktext">CHAT</a>
-		<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLTczYTczMjg5MTUzZjRkZDkxNWVlMjExZDE0ZWYyYjA3NTA2NmI1MTdmY2RkNmFiOTVkNTMyNDFjZmFkNjIwNmM"><img src="images/slacklogo.png" id="slacklogo"></a>
-
-		<a href="http://patreon.com/BasicIncomeAu" id="patreontext">DONATE</a>
-		<a href="http://patreon.com/BasicIncomeAu"><img src="images/patreonlogo.png" id="patreonlogo"></a>
-
-		<a href="https://www.facebook.com/BasicIncomeAu/" id="facebooktext">FACEBOOK</a>
-		<a href="https://www.facebook.com/BasicIncomeAu/"><img src="images/facebooklogo.png" id="facebooklogo"></a>
-
-		<a href="https://twitter.com/basicincome_au" id="twittertext">TWITTER</a>
-		<a href="https://twitter.com/basicincome_au"><img src="images/twitterlogo.png" id="twitterlogo"></a>
-
-		<a href="mailto:BasicIncomeAu@gmail.com" id="emailtext">EMAIL</a>
-		<a href="mailto:BasicIncomeAu@gmail.com"><img src="images/emaillogo.png" id="emaillogo"></a>
-	</header>
-
-	<header class="mob">
-		<div id="nav" onclick="burgerclick()"><h5>NAVIGATE</h5></div>
-		<div id="contact" onclick="contactclick()"><h5>CONTACT</h5></div>
-	</header>
-
-	<div id="webmenu" class="invisible">
-		<div id="hr"></div>
-		<div id="col1">
-			<strong id="whatisstrong" onclick="whatisclick()">Introduction</strong>
-			<div class="ptag closed" id="whatisdiv">
-				<a href="index.html">Home</a>
-				<a href="#whatisUBI">What is a Basic Income?</a>
-				<a href="#lookslike">What would an implementation look like?</a>
-				<a href="#universalism">What is the difference between a Guaranteed Basic Income and a Universal Basic Income?</a>
-			</div>
-		</div>
-		<div id="col2">
-			<strong id="whysupportstrong" onclick="whysupportclick()">Why support Basic Income?</strong>
-			<div class="ptag closed" id="whysupportdiv">
-				<a href="#coersion">It allows people to be genuinely free</a>
-				<a href="#poverty">It would end poverty</a>
-				<a href="#technologically">We live in a technologically unprecedented time</a>
-				<a href="#democracy">A revolution in democracy</a>
-				<a href="#empower">The role of government should be to empower people</a>
-				<a href="#workers">It would empower workers</a>
-				<a href="#capitalism">It would fix internal contradictions within capitalism</a>
-			</div>
-		</div>
-		<div id="col3">
-			<strong id="likebutstrong" onclick="likebutclick()">I like the idea, but...</strong>
-			<div class="ptag closed" id="likebutdiv">
-				<a href="#pay">How do you pay for it?</a>
-				<a href="#entitled">Why are you entitled to this?</a>
-				<a href="#pitch">How can you pitch the idea to wealthy people?</a>
-				<a href="#flight">I'm worried about capital flight</a>
-				<a href="#hyper">I'm worried about hyperinflation</a>
-				<a href="#lazy">Without jobs, won't people get bored and lazy?</a>
-				<a href="#drugs">Won't people just spend it on drugs?</a>
-				<a href="#dignity">What about the dignity of work?</a>
-				<a href="#dependent">Won't people end up dependent on government?</a>
-				<a href="#cut">I'm worried it could cut government programs</a>
-				<a href="#trial">We need to trial the idea more first</a>
-				<a href="#JG">I prefer the idea of a Job Guarantee</a>
-			</div>
-		</div>
-		<div id="col4">
-			<strong id="involvedstrong" onclick="involvedclick()">How can I get involved?</strong>
-			<div class="ptag closed" id="involveddiv">
-				<a href="#involved">click here to find out</a>
-				<a href="#2020">2020 events</a>
-				<a href="#conveners">meet the conveners</a>
-			</div>
-		</div> 
-	</div>
-
-	<div class="mob invisible" id="outercontact">
-		<!-- <div id="innercontact"> -->
-			<div class="grid-item left" id="contact1"><img src="images/meetuplogox.png"><h6>COME TO AN EVENT</h6></div>
-			<div class="grid-item left" id="contact2"><img src="images/slacklogox.png"><h6>CHAT</h6></div>
-			<div class="grid-item left" id="contact3"><img src="images/facebooklogox.png"><h6>FACEBOOK</h6></div>
-			<div class="grid-item right" id="contact4"><img src="images/patreonlogox.png"><h6>DONATE</h6></div>
-			<div class="grid-item right" id="contact5"><img src="images/emaillogox.png"><h6>EMAIL</h6></div>
-			<div class="grid-item right" id="contact6"><img src="images/twitterlogox.png"><h6>TWITTER</h6></div>
-		<!-- </div>  -->
-	</div>
-
-	<div id="home">
-		<img src="images/safarilogo.png" class="safari" id="logoimg">
-		<h1>
-			<span id="firstspan">BASIC</span>
-			<span id="secondspan">INCOME</span>
-		</h1>
-		<h2>an unconditional<br>liveable wage<br>for all</h2>
-		<h3>if you scroll, you'll be scrolling for a long time<br>use the navigation button in the upper-left corner instead</h3>
-	</div>
-
-	<div class="viewportshell"><div class="viewport" id="img1"></div></div>
-	<article class="info" id="whatisUBI">
-		<h4>What is a Basic Income?</h4>
-
-		<div class="ptag">A Basic Income is an unconditional, liveable wage for every citizen. If it doesn't meet the three metrics of 1) unconditionality 2) liveability and 3) for every citizen, then it's not a Basic Income.</div>
-
-		<div class="ptag">But there have been several variation of Basic Income proposed throughout history, so how can you know this definition is the most "correct" one? The first thing to note is that one of the central claims of UBI advocates is that it would allow everyone to meet their basic needs without a job ("living is free but everything else still costs money"). If the wage given was conditional or unliveable then that wouldn't be possible.</div>
-
-		<div class="ptag">Also when evaluated in pairs, these features already exist and wouldn't be a revolutionary new concept but a combination of the three of them would be. A conditional living wage for every citizen is called 'welfare' (I know it’s hard to believe but some countries actually set their welfare rates at a living wage). An unconditional liveable wage for some citizens is called 'capital dividends' and it's only accessible to the wealthy. And an unconditional unlivable wage is what the Alaska Permanent Fund<a href="https://en.wikipedia.org/wiki/Alaska_Permanent_Fund"><sup>1</sup></a> is and has been in place since 1980.</div>
-
-		<!-- <iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube"></iframe> -->
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img2"></div></div>
-	<article class="info" id="lookslike">
-		<h4>What would an implementation look like?</h4>
-
-		<div class="ptag">While there is not a unanimously agreed upon implementation within the movement, most people tend to agree that it should be around the poverty line (Henderson Poverty Line is approximately $500/wk<a href="https://melbourneinstitute.unimelb.edu.au/publications/poverty-lines"><sup>1</sup></a>) and paid out in smaller, periodic payments (e.g. weekly or fortnightly, rather than annually).</div>
-
-		<div class="ptag">In regards to how the payments are made, it could be a system as simple as having a database with all living Australian citizens and their bank accounts and sending a direct deposit of the same amount to each one automatically (given the rate is flat, groups such as parents and less abled people would need a additional payments through a separate service). Or it could be a more complex system that varies the rates depending on peoples living situations (e.g. parents, less abled) but with all rates above a given floor. Depending on implementation the net financial result of these two options could be the same, but there would be differences socially and politically.</div>
-
-		<div class="ptag">Compliance services would have to ensure there are no duplicate payments and all recipients are alive, but these services largely already exist within the current Centrelink system.</div>
-
-		<!-- <iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube"></iframe> -->
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img2"></div></div>
-	<article class="info" id="universalism">
-		<h4>What is the difference between a Guaranteed Basic Income and a Universal Basic Income?</h4>
-
-		<!-- <div class="ptag">As with most definitions in politics these definitions are changing, subject to the context of use. It's common for terms to get misused or co-opted and that needs to always be kept in mind. 'Liberal' is a great example of this because in Australia it is the name of the mainstream right-wing political party and it therefore comes with certain right-wing connotations. In Canada it is the name of the mainstream left-wing political party and comes with very different connotations. In the US and UK, 'Liberal' is not the name of a major party and throughout history has been used to mean very different things.</div>
- -->
-		<div class="ptag"><!-- With that in mind,  -->In a modern, Australian context this is what the differences<!-- between Guaranteed and Universal --> are generally understood to be:</div>
-
-		<div class="ptag"><span class="bold">Universal Basic Income:</span> tax more and provide an equal payment to every citizen.</div>
-
-		<div class="ptag"><span class="bold">Guaranteed Basic Income:</span> tax less and ony provide payments to those below an income threshold.</div>
-
-		<div class="ptag">In financial terms, theoretically both policies could have an equivalent net result (because your income would be the same if you were taxed more and you received some of it back, compared with if you were just taxed less to begin with) so while the 'cost' of one looks significantly bigger than the other on the balance books, the main difference is in the simplicity of implementation. Both systems would require administration on the 'taxation end' (in order to ensure everyone who should be paying tax is paying tax), but only the Guaranteed version requires administration on the 'income end'.</div>
-
-		<div class="ptag">In emotional terms, means-tested welfare is a very degrading and dehumanising process that adds additional strain to people who are already struggling. It creates and then stigmatises a class of people who receive targeted welfare, which results in those programs being much easier to cut. When the welfare system is complex and difficult to understand, it becomes harder to mobilise a political defense against those cuts.</div>
-
-		<!-- <iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube"></iframe> -->
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img2"></div></div>
-	<article class="info" id="coersion">
-		<h4>It Allows People To Be Genuinely Free</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">True freedom means freedom from coercion<a href="https://www.merriam-webster.com/dictionary/freedom"><sup>1</sup></a>. If we live in a society that forces people to generate profit for a company in order to stay alive, how can we say that we are truly free?</div>
-
-		<div class="ptag">A Basic Income gives everybody the security to say "no" to unsafe, illegal, unpleasant or unethical working conditions and financial dependencies within abusive relationships. We teach our children the importance of consent in the bedroom, and it's time we extended the same values economically.</div>
-
-		<div class="ptag">When people are free from forced work, they're free to do their best work. Many people today want to do something to improve themselves/their community/the world but their time and energy is drained generating profit for an employer.</div>
-
-		<blockquote>"I am somehow less interested in the weight and convolutions of Einstein's brain than in the near certainty that people of equal talent have lived and died in cotton fields and sweatshops"<br> - Steven Jay Gould</blockquote>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img3"></div></div>
-	<article class="info" id="poverty">
-		<h4>It Would End Poverty</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  <div class="overlay">test</div> 
-		</div>-->
-
-
-
-		<div class="ptag">We live in the most abundant time in history with more empty homes<a href="https://www.domain.com.au/news/empty-homes-the-economic-reasons-behind-investors-keeping-properties-vacant-20170404-gvdc7l/"><sup>1</sup></a> than homeless people<a href="http://www.homelessnessaustralia.org.au/index.php/about-homelessness/homeless-statistics"><sup>2</sup></a> and more food is being produced than can be eaten<a href="https://theconversation.com/melbourne-wastes-200-kg-of-food-per-person-a-year-its-time-to-get-serious-60236"><sup>3</sup></a>, so why do we continue to allow people to go homeless and hungry?</div>
-
-		<blockquote>"There is nothing new about poverty. What is new, however, is that we have the resources to get rid of it"<br> - Martin Luther King Jr</blockquote>
-
-		<div class="ptag">We guarantee a certain level of healthcare to all people because an ounce of prevention is worth a pound of cure and we should do the same for poverty, given that poverty is linked with an increased need for child services<a href="https://www.sciencedirect.com/science/article/pii/S0190740916303358"><sup>4</sup></a>, prisons<a href="https://theconversation.com/grand-theft-auto-doesnt-cause-crime-but-poverty-and-alienation-will-56499"><sup>5</sup></a> and policing<a href="https://www.poverties.org/blog/poverty-and-crime"><sup>6</sup></a>.</div>
-
-		<div class="ptag">The current "default income" is $0/wk and if people want to change that then they have to actively do something about it. With a Basic Income the "default income" would be a livable wage so while poverty may not be eradicated entirely, people would have to actively try to fall into it.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img4"></div></div>
-	<article class="info" id="technologically">
-		<h4>We live in a technologically unprecedented time in history</h4>
-
-		<!--<div class="sidebar">
-		<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		<div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">200 years ago life expectancy was half of what it is today. 75 years ago programming languages didn't exist, 45 years ago machine learning had just been conceptualised, 30 years ago the internet became open to the public. The world is changing and the traditional rules for structuring society don't make sense any more.</div>
-
-		<div class="ptag">Technology that is currently in its relative infancy such as self-driving cars, Amazon Go, farmbot and machine learning algorithms are predicted to put approximately 50% of the workforce out of a job within the next 20 years<a href="http://www.eng.ox.ac.uk/about/news/new-study-shows-nearly-half-of-us-jobs-at-risk-of-computerisation"><sup>1</sup></a> and while all evidence shows that new "bullshit jobs"<a href="https://www.canberratimes.com.au/public-service/the-modern-phenomenon-of-bullshit-jobs-20130831-2sy3j.html"><sup>2</sup></a> will be invented to keep everyone busy, the reality is that we don't need everybody working to keep society functioning (and if we did then there wouldn't be more job-seekers than there are jobs<a href="https://www.theguardian.com/business/2016/oct/31/only-one-job-advertised-for-every-six-low-skilled-jobseekers-report"><sup>3</sup></a>). For some, this displacement will mean going back to university to study programming but for many without 4+ spare years for retraining, this will be devastating.</div>
-
-		<div class="ptag">For all of human history up until a few hundred years ago, 80-90% of the population were farmers because they had to be in order to keep everybody alive. Today that figure in Australia is closer to 1%<a href="https://www.nff.org.au/farm-facts.html"><sup>4</sup></a> (and with fully automated farming technology recently introduced to the market<a href="https://www.youtube.com/watch?v=uNkADHZStDE"><sup>5</sup></a> we could see that figure soon move closer to 0%) which leaves a huge amount of "slack" in the economy. The argument that we need to force people to work to earn a living made sense when we needed "all hands on deck" but simply doesn't hold up to the reality of modern day.</div>
-
-		<blockquote>"You ever think about how bad we had to fuck up to create a world where robots taking all the jobs is somehow a bad thing?"<br> - @heatdeath on twitter</blockquote>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img5"></div></div>
-	<article class="info" id="democracy">
-		<h4>A revolution in democracy</h4>
-
-		<!--<div class="sidebar">
-		<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		<div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">Democracy requires participation. If everyone received an unconditional liveable wage they would be able to spend as much (or as little) time and energy engaging in participatory democracy as they want, rather than work-drained activists using whatever free time they have outside of the 9-5. If democracy requires participation and so people don't have time to participate, how can we even say we have a democracy?</div>
-
-		<blockquote>"One argues that a democratic society cannot persist unless it prepares all of its young with equal care to take on the full responsibilities of citizenship in a competent manner. We all depend on this political competence of our fellow citizens, since we put ourselves at the mercy of their collective judgment about the running of our society"<br> - David F Labaree</blockquote>
-
-		<div class="ptag">Outside of participatory democracy, new options like a Direct Democracy would become a lot more viable if everyone who wanted to participate was guaranteed to have time to participate. And perhaps even more importantly, when we’re free from work we’re free to think about other things. We’re free to dream bigger and ask structural questions about our society. How can we expect to solve the monumental problems we face today while we’re all trapped in an endless treadmill of work? Every issue becomes easier to solve when people have the time and energy to care and get involved</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img5"></div></div>
-	<article class="info" id="empower">
-		<h4>The Role Of Government Should Be To Empower People</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			 <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">Traditional thinking would suggest that in order to empower people and combat poverty that the government should provide services, but studies<a href="http://www.scottsantens.com/giving-goods-and-services-vs-giving-money"><sup>1</sup></a><a href="https://www.youtube.com/watch?v=bArH8r8jJ4g"><sup>2</sup></a><a href="https://www.youtube.com/watch?v=ytg-Uk5eOww"><sup>3</sup></a> have shown that it's more effective to just give cash directly because people in poverty know best how to use the money allocated to them. We live in the most educated society in history<a href="https://theconversation.com/the-world-is-more-educated-than-its-ever-been-how-51224"><sup>4</sup></a> and we need to acknowledge that poverty is primarily due to influences in our collective economy rather than an individual's lack of education.</div>
-
-		<div class="ptag">Comparing a Basic Income to a means tested program that is only targeted towards those in dire poverty gets to the heart of a question around what the role of government should be. Does it exist as a pity charity for the losers of our economy or should its role be to broadly empower all citizens?</div>
-
-		<blockquote>"The task of government is not to make decisions for you or for anyone. The task of government is to enable you to make decisions for yourselves. Not to see the truth of that statement is fundamentally to mistake the genius of democracy. We have made too many mistakes of this type-but no more. Our job is to get resources to people in need and then to let them run their own lives."<br> - Richard Nixon</blockquote>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img7"></div></div>
-	<article class="info" id="workers">
-		<h4>It would empower workers</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			 <div class="overlay">test</div> 
-		</div>-->
+	<div id="globalContainer">
+		<div id="basicIncomeContainer">
+			<header class="web">
+				<svg xmlns="http://www.w3.org/2000/svg" id="hamburger" onclick="burgerclick()" viewBox="0 0 24 24" fill="white" width="18px" height="18px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"/></svg>
 		
-		<div class="ptag">A Basic Income would ensure that even the poorest amongst us has the ability to walk away from bad working conditions. Empowered from traditional fears over their livelihoods, workers would be able to strike and withhold their labour indefinitely.</div>
+				<div>
+					<a href="http://meetup.com/BasicIncomeAu" id="meetuptext">COME TO AN EVENT</a>
+					<a href="http://meetup.com/BasicIncomeAu"><img src="images/meetuplogo.png" id="meetuplogo"></a>
+					
+					<!-- <a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLTczYTczMjg5MTUzZjRkZDkxNWVlMjExZDE0ZWYyYjA3NTA2NmI1MTdmY2RkNmFiOTVkNTMyNDFjZmFkNjIwNmM" id="slacktext">CHAT</a>
+					<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLTczYTczMjg5MTUzZjRkZDkxNWVlMjExZDE0ZWYyYjA3NTA2NmI1MTdmY2RkNmFiOTVkNTMyNDFjZmFkNjIwNmM"><img src="images/slacklogo.png" id="slacklogo"></a> -->
 
-		<blockquote>"Can the hungry go on a hunger strike? Non-violence is a piece of theatre. You need an audience. What can you do when you have no audience? People have the right to resist annihilation."<br> - Arundhati Roy</blockquote>
-
-		<div class="ptag">But to fight for unions and workers rights isn’t enough, it's time for a movement centered around human rights. By only valuing labour in the form of paid employment, the modern labour movement is inadvertently propping up a system of exploitation because the class structures within employment are fundamentally exploitative.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img8"></div></div>
-	<article class="info" id="capitalism">
-		<h4>It would fix internal contradictions within capitalism</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			 <div class="overlay">test</div> 
-		</div>-->
-
-		
-		<div class="ptag">We're told that capitalism is a system in which you are rewarded for meeting the needs of others, but when the top 1% of Australians own more wealth than bottom 70% combined<a href="https://www.theguardian.com/australia-news/2018/jan/22/top-1-per-cent-of-australians-own-more-wealth-than-bottom-70-per-cent-combined"><sup>1</sup></a>, the economy of meeting peoples needs start to look a lot more like an economy of meeting the needs of the wealthiest.</div>
-
-		<div class="ptag">We're told that capitalism allows for consumer preferences to be heard as people vote for the products they like with their dollars, but when many people have no disposable income to "vote" with, a system that is intended to function as a democracy in reality functions more closely to a dictatorship.</div>
-
-		<div class="ptag">We're told that capitalism fosters innovation and entrepeneurialism, but we also know that innovation thrives when people have the safety to take risks and fail<a href="https://equitablegrowth.org/protecting-against-risk-can-help-boost-u-s-entrepreneurship/"><sup>2</sup></a>. Given how many people are insecure and incapable of taking risks<a href="https://www.abc.net.au/news/2017-08-23/newstart-not-enough-to-afford-basic-needs/8835678"><sup>3</sup></a>, how can we say that we are fostering innovation to the fullest?</div>
-
-		<blockquote>"The hope is that policies like [Basic Income] can help people struggling just to survive and allow them to get on their feet, be entrepreneurial and be more creative"<br> - Richard Branson</blockquote>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img8"></div></div>
-	<article class="info" id="pay">
-		<h4>How Do You Pay For It?</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">There are far too many different schools of thought regarding specifics<a href="https://medium.com/economicsecproj/how-to-reform-welfare-and-taxes-to-provide-every-american-citizen-with-a-basic-income-bc67d3f4c2b8"><sup>1</sup></a> to summarise them all, but the broad consensus relies on a few simple facts:</div>
-
-		<ol>
-			<li>money is a tool used to represent value<a href="https://youtu.be/InwVM6s7WoY"><sup>2</sup></a></li>
-			<li>we live in the most abundant time in history<a href="https://www.domain.com.au/news/empty-homes-the-economic-reasons-behind-investors-keeping-properties-vacant-20170404-gvdc7l/"><sup>3</sup></a> <a href="https://theconversation.com/melbourne-wastes-200-kg-of-food-per-person-a-year-its-time-to-get-serious-60236"><sup>4</sup></a></li>
-		</ol>
-
-		<div class="ptag">Australia is estimated to be the second wealthiest country on average per person in the world with about $580,000 per adult<a href="https://amp.theage.com.au/business/the-economy/the-wealthy-country-australians-are-the-richest-people-in-the-world-20181109-p50eyc.html?__twitter_impression=true&fbclid=IwAR01olKPnKXXtek4BZUesVXygjToUi8qYZOJhsEiz01R8jBE8qchHPsQ4-0"><sup>5</sup></a>. Our problems don't come from a lack of money, they come from a problem in the distribution of money.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img10"></div></div>
-	<article class="info" id="entitled">
-		<h4>Why are you entitled to this?</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			 <div class="overlay">test</div> 
-		</div>-->
+					<a onclick="checkSidebar();" id="slacktext">CHAT</a>
+					<a onclick="checkSidebar();"><img src="images/slacklogo.png" id="slacklogo"></a>
 
 
-		<div class="ptag">Most of the wealth in our society is not the result of anyone alive today<a href="https://medium.com/economicsecproj/technological-inheritance-and-the-case-for-a-basic-income-ded373a69c8e"><sup>1</sup></a>. From the land and resources inherent in the earth to the scientific advancements of previous generations, we have been given incredible gifts, but those gifts have been very unevenly distributed throughout society<a href="https://www.theguardian.com/inequality/2017/nov/14/worlds-richest-wealth-credit-suisse"><sup>2</sup></a>. To suggest that wealth is purely generated by individuals is to suggest that Mark Zuckerberg could have made Facebook on his own even if he was born hundreds of years ago.</div>
-
-		<blockquote>"I personally think that society is responsible for a very significant percentage of what I've earned. If you stick me down in the middle of Bangladesh or Peru or someplace, you'll find out how much this talent is going to produce in the wrong kind of soil."<br> - Warren Buffett</blockquote>
-
-		<div class="ptag">With productivity on the rise<a href="http://www.tradingeconomics.com/australia/productivity"><sup>3</sup></a>, growing automation is on target to create trillions in new value<a href="https://www.mckinsey.com/featured-insights/digital-disruption/harnessing-automation-for-a-future-that-works"><sup>4</sup></a>. What is more entitled, to think that you deserve basic necessities in a time of overabundance or to think you deserve luxuries before others deserve basic necessities? In a world of finite resources the limits on our freedom should end at the point upon which they encroach upon others' freedoms.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img11"></div></div>
-	<article class="info" id="pitch">
-		<h4>How can you pitch the idea to wealthy people?</h4>
-
-		<!--<div class="sidebar">
-		<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		<div class="overlay">test</div> 
-		</div>-->
-
-
-
-		<div class="ptag">One of the more interesting things about the idea is that it seems we don't have to. While wealthy people are renowned for tax avoidance<a href="https://en.wikipedia.org/wiki/Panama_Papers"><sup>1</sup></a>, some of the wealthiest people in the world are lining up to endorse the idea<a href="https://www.cnbc.com/2017/12/27/what-billionaires-say-about-universal-basic-income-in-2017.html"><sup>2</sup></a> and unabiguously state that they should be taxed to pay for it<a href="https://www.youtube.com/watch?v=QM8l623AouM"><sup>3</sup></a>. These people largely made their wealth within tech industries and their reasoning typically is that the nature of work is changing and will continue to change due to advances in technology. They suggest that we are going to need a much stronger social safety net in order to effectively transition through the displacements they're predicting over the coming decades.</div> 
-
-		<div class="ptag">But if you did want to make the case, one way is to point out that our economy is not a zero-sum game<a href="https://www.youtube.com/watch?v=rvskMHn0sqQ"><sup>4</sup></a>. It's time to move past the widely debunked trickle-down economic narriatives<a href="https://www.youtube.com/watch?v=CKCvf8E7V1g"><sup>5</sup></a> to see that everyone does better when everyone does better. By distributing money to those who most need it (and spend it), we can increase the Velocity of Money<a href="http://tim-ellis.com/post/80787565427/on-stimulus-and-the-velocity-of-money-a-parable"><sup>6</sup></a> and therefore increase demand in the market<a href="https://www.youtube.com/watch?v=nT2JKf-rcTk"><sup>7</sup></a>.</div>
-
-		<blockquote>"Give [money] to the people at the bottom and the people at the top will have it before night, anyhow. But it will at least have passed through the poor fellow's hands."<br> - Will Rogers</blockquote>
-
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img12"></div></div>
-	<article class="info" id="flight">
-		<h4>I'm worried about capital flight</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			 <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">This comes from a place of the most absolute defeatism. To say that the capital owners have all the power in the world and that nothing can be done about it and no policy can ever be achieved unless it upholds the current power structures. If these people have no interest in being a part of our society and only stay here to take advantage of our tax laws then we should welcome their leaving.</div>
-
-		<blockquote>"If tax really were a pure burden, all rich individuals and companies would move to Paraguay or Bulgaria, where the top rate of income tax is 10%. Of course, this does not happen because, in those countries, in return for low tax you get poor public services. Conversely, most rich Swedes don't go into tax exile because of their 60% top income tax rate, because they get a good welfare state and excellent education in return. Japanese and German companies don't move out of their countries in droves despite some of the highest corporate income tax rates in the world (31% and 30% respectively) because they get good infrastructure, well-educated workers, strong public support for research and development, and well-functioning administrative and legal systems"<br> - Ha-Joon Chang</blockquote>
-
-		<div class="ptag">But even if they do leave, they're not taking our land, roads, schools, workers, electricity grids or internet infrastructure. Everything at the core of what makes our society function. Our economy is driven by demand, not by supply - and by leaving and removing their business they would open up new markets for local entrepreneurs who want to participate in our society.</div>		
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img13"></div></div>
-	<article class="info" id="hyper">
-		<h4>I'm worried about hyperinflation</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			 <div class="overlay">test</div> 
-		</div>-->
-		
-		<div class="ptag">Hyperinflation is a very complex topic that isn't even fully understood by a lot of economists, but is generally understood to be related to the ratio between money in circulation and products in circulation<a href="https://www.youtube.com/watch?v=afWqKcqntfs"><sup>1</sup></a>. Since most Basic Income proposals aren't funded through increasing the money supply that ratio would remain unchanged from the current ratio.</div>
-
-		<!-- <div class="ptag">It is also generally understood that prices are related to market competition<a href="https://en.wikipedia.org/wiki/Competition_(economics)"><sup>2</sup></a> and as long as there is genuine competition within a market then it is unlikely that prices would rise. With or without a Basic Income the government should be .</div>
- -->
-		<div class="ptag">The implication usually behind this line of logic is that if everyone has their basic needs met then it will crash the economy. If true, this is a convincing argument for moving to a radically different economic system. Another implication is that if poor people are given more money, then they end up having less money. The reasonable thing to do if that were the case would be to abolish Centrelink and the minimum wage in order to help poor people. If this line of reasoning was accurate, you could hypothetically counteract the hyperinflation by taxing people and reducing the money supply.</div>
-
-		<div class="ptag">At the end of the day, we have to ask if hyperinflation is a legitemate critique or just a talking point fed to us by people who prefer the status quo. To figure out which it is, think about whether you would have opposed the abolition of slavery because it could have caused hyperinflation.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img14"></div></div>
-	<article class="info" id="lazy">
-		<h4>Without jobs, won't people get bored and lazy?</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-			 <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">There will still be jobs. A Basic Income isn't an end to work, it is simply an end to forcing people to work in order to meet their basic needs. Regardless of how people choose to spend their time, we need an affirmative statement that says all people are unconditionally entitled to the resources they need to live.</div>
-
-		<div class="ptag">The idea that people will become destitute and idle when given the option not to work is completely disconnected from any psychological analysis of motivation. For instance, looking at Maslow's Hierarchy of Needs<a href="https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs"><sup>1</sup></a> a Basic Income would cover the two base levels relating to fundamental needs but would still leave many needs to be fulfilled that can't be achieved solely using money.</div>
-
-		<blockquote>"Look at little children who haven't yet started school and therefore haven't yet had their curiosity and playfulness suppressed for the sake of work. Are they lazy? No. They are almost continuously active when not sleeping. They are always getting into things, motivated by curiosity, and in their play they make up stories, build things, create art, and philosophize (yes, philosophize) about the world around them.  There is no reason to think the drives for such activities naturally decline with age.  They decline because our schools, which value work and devalue play, drill them out of people; and then tedious jobs and careers continue to drill them out.  These drives don't decline in hunter-gatherers with age, and they wouldn't decline in us either if it weren't for all the work imposed on us"<br> - Peter Gray</blockquote> 
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img16"></div></div>
-	<article class="info" id="drugs">
-		<h4>Won't people just spend it on drugs?</h4>
-
-      <!--<div class="sidebar">
-   		<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          <div class="overlay">test</div> 
-      </div>-->
-
-      <div class="ptag">In cash transfer studies is there no evidence of this, however there is evidence of the exact opposite: that recipients start eating better and taking better care of themselves. Addiction is more complicated than it's often made out to be and fundamentally comes from a place of escapism<a href="https://www.youtube.com/watch?v=PY9DcIMGxMs"><sup>1</sup></a>. We should prioritise treatment and building a society that people don't feel the need to escape from, above demonising people with an illness.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img17"></div></div>
-	<article class="info" id="dignity">
-		<h4>What about the dignity of work?</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">If work is as appealing as its advocates claim it is, then we should make it voluntary. When provided with an unconditional liveable wage people will choose to work because it brings them so much dignity. There is no way to know if this would actually happen, but there's also no way to know if work is the source of the value it's attributed to. We live in a society that puts an incredible emphasis on paid labour, it's possible that people gain social benefits from doing things that are considered socially acceptable.</div>
-
-		<div class="ptag">We should also be extremely careful when addressing this issue because the implication is that those who do not work don't have dignity. Does this supposed to mean that children and less abled people don't have dignity? Or can dignity come from other sources that don't require you to sell your body?</div>
-
-		<blockquote>"The view that people need work in order to be happy is closely tied to the patronizing view that people can't handle freedom. That dismal view of human nature has been promoted for centuries, and reinforced in schools, in order to maintain a placid workforce."<br> - Peter Gray</blockquote>
-
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img18"></div></div>
-	<article class="info" id="dependent">
-		<h4>I don't want people to be dependent on the government</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">It's not a question of being dependent on "government" but rather dependent on society (after all, the purpose of government is to enforce the rules that we collectively agree on as a society). Did you build your house? Did you grow your food? Do you personally test the food safety and product quality of everything you buy? If your employer were to not pay you, are you dependent on the government legal system to hold them accountable?</div>
-
-		<div class="ptag">We live in a complex interdependent society today and we will continue to live in a complex interdependent society with a Basic Income. None of us alone can stand against the forces of nature.</div>
-
-		<blockquote>"There's a much quoted proverb in the world of finance that I hate: Give a man a fish and you will feed him for a day. Teach a man how to fish and you will feed him for a lifetime. I say bullshit to this. Do the poor really not know how to fish? And what good is it to know how to fish if the rights to fish are owned by powerful landlords? And if the river is polluted by upstream tyrants? And what good is it to be taught to fish if the price and distribution of fish is controlled by conglomerate monopolies?"<br> - Ananya Roy</blockquote>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img18"></div></div>
-	<article class="info" id="cut">
-		<h4>I'm worried this will be used as a tool to cut government programs</h4>
-
-		<!--<div class="sidebar">
-			<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		  <div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">The critique implies that we sit at an ideal equilibrium of government programs and any cuts to one ensures cuts to another. By this logic, someone advocating for free higher education should be to blame for cuts to healthcare. There is a double-standard here that if applied universally would mean we wouldn't support any change in government at all.</div>
-
-		<div class="ptag">But let's be explicitly clear: a Basic Income shouldn't be used as an excuse to gut the current welfare system and leave people worse off than they are today. Programs such as the NDIS and public education would still play a critical role in a world with a Basic Income.</div>
-
-		<div class="ptag">What is likely to happen is that many programs dedicated to serving people in poverty would have far less clients when every citizen is unconditionally receiving a livable wage. Our current tangled web of means-tested bureaucracy would not need to be cut, it would simply become redundant.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img19"></div></div>
-	<article class="info" id="trial">
-		<h4>We need to trial the idea more first</h4>
-
-		<!--<div class="sidebar">
-		<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		<div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">Given that the policy is universal by definition, a Basic Income can't be trialled because every trial will be insufficient. (Much like with vaccines against diseases, a vaccination against poverty would likely show significantly greater results due to "herd immunity"<a href="https://www.theguardian.com/society/ng-interactive/2015/feb/05/-sp-watch-how-measles-outbreak-spreads-when-kids-get-vaccinated"><sup>1</sup></a>). Given that all trials will be insufficient, you could say that we have had a trial running here in Australia for the past 70 years in the form of an various social security welfare payments that have successfully saved millions from abject poverty. 
-		<!-- Unfortunately many others are not saved<a href="https://www.homelessnessaustralia.org.au/about/homelessness-statistics"><sup>2</sup></a>. -->
-		</div>
-
-		<div class="ptag">But Australian welfare is very heavily means tested so a reasonable question to ask is if non-means-tested welfare has been trialled. It has. Many times<a href="https://www.reddit.com/r/BasicIncome/wiki/index#wiki_that.27s_all_very_well.2C_but_where.27s_the_evidence.3F"><sup>2</sup></a> throughout a variety of different cultures and regularly shows positive results such as increased mental/physical health, decreases in crime, students able to more clearly focus on studies, new parents being able to devote more time to taking care of children.</div>
-
-		<blockquote>"It is weird to me that the abolition of poverty is something that we need to prove would be good. The idea that we need these trials to see if it works is mistaken and a bit of a distraction. Basic income is mostly a matter of taking economic security and freedom seriously. This is an ethical debate more than anything else."<br> - Jason Murphy</blockquote>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img20"></div></div>
-	<article class="info" id="JG">
-		<h4>I prefer the idea of a "Job Guarantee"</h4>
-
-		<!--<div class="sidebar">
-		<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-		<div class="overlay">test</div> 
-		</div>-->
-
-		<div class="ptag">There is nothing inherent that excludes the policies from being implemented simultaneously and advocates tend to agree that having both would be ideal. The conflict between the two programs typically tend to be in regards to which policy should be prioritised.</div>
-
-		<div class="ptag">A long-form article summarising some reasons why the Basic Income should be prioritised is linked <a href="https://greenagenda.org.au/2018/10/prioritise-ubi-over-a-job-guarantee/" class="extlink">here</a>, but this is the short version:</div>
-		<ol>
-			<li>A Job Guarantee must be optional in order to be progressive and non-coersive and we don't currently have a safety net that allows all people to safely refuse work. </li>
-			<li>A Basic Income changes the political narrative that says people's dignity and value are derived from their jobs and paves the way for new methods of structuring society. </li>
-			<li>We must be bold and unambiguous in saying that poverty is unacceptable and that every life has value regardless of whether or not they’re working. </li>
-		</ol>
-
-		<!-- <div class="h_iframe">
-			<iframe src="https://greenagenda.org.au/2018/10/prioritise-ubi-over-a-job-guarantee/?utm_source=facebook&utm_medium=article&utm_campaign=facebook-article-prioritise-ubi-over-a-job-guarantee" width="800px" id="greenagenda">
-			<a href="https://greenagenda.org.au/2018/10/prioritise-ubi-over-a-job-guarantee/?utm_source=facebook&utm_medium=article&utm_campaign=facebook-article-prioritise-ubi-over-a-job-guarantee">via this link</a>
-			</iframe>
-      	</div> -->
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img21"></div></div>
-	<article class="info" id="involved">
-		<h4>How can I get involved?</h4>
-
-		<div class="ptag">If you live in Melbourne or Adelaide, there are regular meetings in your city. Why not go along and meet fellow advocates and use your unique skills to further the movement?</div> 
-
-		<div class="ptag"><a href="https://www.meetup.com/BasicIncomeAu/" class="extlink">Click here for Melbourne events</a> and <a href="https://www.meetup.com/Adelaide-Basic-Income-Meetup/" class="extlink">here for Adelaide events</a>.</div> 
-
-		<div class="ptag">If those are inaccessible to you, come join our Slack group (<a href="https://join.slack.com/t/basicincomeau/shared_invite/enQtMjQ0MDQ1NTE5NzgxLWRiNjY1YzdiZDdmYWIwNDFiZDgxZWE4ZWVlODZjMzFiMzZkNjJjNWVkNmJkMDZjNzMxNGExN2JmNDg0MDNiODg" class="extlink">link here</a>). Don't be shy, we want to meet and help new active members.</div>
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img20"></div></div>
-	<article class="info" id="2020">
-		<h4>2020 Events</h4>
-
-		<div class="ptag">In 2020 we are holding quarterly community events in central Melbourne. If the <a href="#involved" class="extlink">monthly events</a> are for activists looking to take action, the quarterly community events are an entry-point for people to learn more about the ideas around a Basic Income.</div>
-
-		<div class="ptag"><span class="bold">What is Basic Income?</span> (27th Feb) - <a href="https://www.trybooking.com/book/event?eid=601379&" class="extlink">RSVP HERE</a></div>
-
-		<div class="ptag"><span class="bold">How a Basic Income can help Economics</span> (17th June) - Details TBD</div>
+					<a href="http://patreon.com/BasicIncomeAu" id="patreontext">DONATE</a>
+					<a href="http://patreon.com/BasicIncomeAu"><img src="images/patreonlogo.png" id="patreonlogo"></a>
 			
-		<div class="ptag"><span class="bold">How a Basic Income can help the Environment</span> (17th Sept) - Details TBD</div>
+					<a href="https://www.facebook.com/BasicIncomeAu/" id="facebooktext">FACEBOOK</a>
+					<a href="https://www.facebook.com/BasicIncomeAu/"><img src="images/facebooklogo.png" id="facebooklogo"></a>
 			
-		<div class="ptag"><span class="bold">How a Basic Income can help Democracy</span> (27th Nov) - Details TBD</div>
-	
-	</article>
-	<div class="viewportshell"><div class="viewport" id="img21"></div></div>
-	<article class="info" id="conveners">
-		<h4>Meet the conveners</h4>
+					<a href="https://twitter.com/basicincome_au" id="twittertext">TWITTER</a>
+					<a href="https://twitter.com/basicincome_au"><img src="images/twitterlogo.png" id="twitterlogo"></a>
+			
+					<a href="mailto:BasicIncomeAu@gmail.com" id="emailtext">EMAIL</a>
+					<a href="mailto:BasicIncomeAu@gmail.com"><img src="images/emaillogo.png" id="emaillogo"></a>
+				</div>
+			</header> 
+			
+			<header class="mob">
+				<div id="navButton" onclick="burgerclick()"><h5>NAVIGATE</h5></div>
+				<div id="contact" onclick="contactclick()"><h5>CONTACT</h5></div>
+			</header>
 
-		<div class="convener">
-			<h4>Melbourne <br><br>Josh McGee</h4>
-			<img src="images/mcgee.png"/>
-			<div class="convenertext ptag">
-				Hi I'm Josh, I'm currently studying a double degree in Robotics Engineering and Computer Science. In my early twenties I explored the world while living in New York, London and Oslo. I've been living in Melbourne since the beginning of 2017 and started this Basic Income action group shortly after arriving. 
-				<br><br>
-				When I look at the level of technology and abundance around us today and yet how much poverty and unnecessary struggle continues, I can clearly see that my goal is to bridge that gap. I believe that it should be the governments job to actively put people out of a job so that they can spend their lives doing whatever is most valuable to themselves. There are many very different reasons to support Basic Income but that's where the conversation starts for me.
+				
+			<div id="nav" class="invisible">
 			</div>
-		</div>
 
-		<div class="convener">
-			<h4>Adelaide <br><br>David Upton</h4>
-			<img src="images/upton.png"  width="223" />
-			<div class="convenertext ptag">
-				Hello, I'm David, I live in Prospect, a leafy suburb in Adelaide with my wife Andrea. No kids or pets. I'm retired now after working on the land, and long term jobs in Road Surveys and Car seat manufacturing and in my latter years, in finance. I grew up on a farm and am still have a lot of country in me.
-				<br><br>
-				When I retired, I starting blogging on the net, and came across UBI. Well it jumped out at me actually, and I was compelled to research and study it to where I aspired to become an activist for it. I totally believe in the concept of a basic income, and am confident the hurdles and scepticism can be overcome, and that we, the general public can appreciate the obvious benefits it will bring and what's more how technological unemployment will necessitate a scheme like Universal Basic Income.
+			<div class="mob invisible" id="outercontact">
+					<div class="grid-item left" id="contact1"><img src="images/meetuplogox.png"><h6>COME TO AN EVENT</h6></div>
+					<div class="grid-item left" id="contact2"><img src="images/slacklogox.png"><h6>CHAT</h6></div>
+					<div class="grid-item left" id="contact3"><img src="images/facebooklogox.png"><h6>FACEBOOK</h6></div>
+					<div class="grid-item right" id="contact4"><img src="images/patreonlogox.png"><h6>DONATE</h6></div>
+					<div class="grid-item right" id="contact5"><img src="images/emaillogox.png"><h6>EMAIL</h6></div>
+					<div class="grid-item right" id="contact6"><img src="images/twitterlogox.png"><h6>TWITTER</h6></div>
 			</div>
-		</div>
-	</article>
-	
-	
+		
+			
+			<div id="home">
+				<img src="images/safarilogo.png" class="safari" id="logoimg">
+				<!-- <h1>
+					<span id="firstspan">BASIC</span>
+					<span id="secondspan">INCOME</span>
+				</h1> -->
+				<h2>an unconditional<br>liveable wage<br>for all</h2>
+				<!-- <h3>if you scroll, you'll be scrolling for a long time<br>use the navigation button in the upper-left corner instead</h3> -->
+			</div>
+		 
+			<!-- <div class="viewportshell"><div class="viewport" id="img1"></div></div> -->
+			<article class="info" id="whatisUBI">
+				<h4>What is a Basic Income?</h4>
+		
+				<div class="ptag">A Basic Income is an unconditional, liveable wage for every citizen. If it doesn't meet the three metrics of 1) unconditionality 2) liveability and 3) for every citizen, then it's not a Basic Income.</div>
+		
+				<div class="ptag">But there have been several variations of Basic Income proposed throughout history, so how can you know this definition is the most "correct" one? The first thing to note is that one of the central claims of UBI advocates is that it would allow everyone to meet their basic needs without a job ("living is free but everything else still costs money"). If the wage given was conditional or unliveable then that wouldn't be possible.</div>
+		
+				<div class="ptag">Also when evaluated in pairs, these features already exist and wouldn't be a revolutionary new concept but a combination of the three of them would be. A conditional living wage for every citizen is called 'welfare' (I know it's hard to believe but some countries actually set their welfare rates at a living wage). An unconditional liveable wage for some citizens is called 'capital dividends' and it's only accessible to the wealthy. And an unconditional unlivable wage is what the Alaska Permanent Fund<a href="https://en.wikipedia.org/wiki/Alaska_Permanent_Fund"><sup>1</sup></a> is and has been in place since 1980.</div>
+		
+				<!-- <iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube"></iframe> -->
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img2"></div></div> -->
+			<article class="info" id="lookslike">
+				<h4>What would an implementation look like?</h4>
+		
+				<div class="ptag">While there is not a unanimously agreed upon implementation within the movement, most people tend to agree that it should be around the poverty line (Henderson Poverty Line is approximately $500/wk<a href="https://melbourneinstitute.unimelb.edu.au/publications/poverty-lines"><sup>1</sup></a>) and paid out in smaller, periodic payments (e.g. weekly or fortnightly, rather than annually).</div>
+		
+				<div class="ptag">In regards to how the payments are made, it could be a system as simple as having a database with all living Australian citizens and their bank accounts and sending a direct deposit of the same amount to each one automatically (given the rate is flat, groups such as parents and less abled people would need a additional payments through a separate service). Or it could be a more complex system that varies the rates depending on peoples living situations (e.g. parents, less abled) but with all rates above a given floor. Depending on implementation the net financial result of these two options could be the same, but there would be differences socially and politically.</div>
+		
+				<div class="ptag">Compliance services would have to ensure there are no duplicate payments and all recipients are alive, but these services largely already exist within the current Centrelink system.</div>
+		
+				<!-- <iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube"></iframe> -->
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img2"></div></div> -->
+			<article class="info" id="universalism">
+				<h4>What is the difference between a Guaranteed Basic Income and a Universal Basic Income?</h4>
+		
+				<!-- <div class="ptag">As with most definitions in politics these definitions are changing, subject to the context of use. It's common for terms to get misused or co-opted and that needs to always be kept in mind. 'Liberal' is a great example of this because in Australia it is the name of the mainstream right-wing political party and it therefore comes with certain right-wing connotations. In Canada it is the name of the mainstream left-wing political party and comes with very different connotations. In the US and UK, 'Liberal' is not the name of a major party and throughout history has been used to mean very different things.</div>
+		 -->
+				<div class="ptag"><!-- With that in mind,  -->In a modern, Australian context this is what the differences<!-- between Guaranteed and Universal --> are generally understood to be:</div>
+		
+				<div class="ptag"><span class="bold">Universal Basic Income:</span> tax more and provide an equal payment to every citizen.</div>
+		
+				<div class="ptag"><span class="bold">Guaranteed Basic Income:</span> tax less and ony provide payments to those below an income threshold.</div>
+		
+				<div class="ptag">In financial terms, theoretically both policies could have an equivalent net result (because your income would be the same if you were taxed more and you received some of it back, compared with if you were just taxed less to begin with) so while the 'cost' of one looks significantly bigger than the other on the balance books, the main difference is in the simplicity of implementation. Both systems would require administration on the 'taxation end' (in order to ensure everyone who should be paying tax is paying tax), but only the Guaranteed version requires administration on the 'income end'.</div>
+		
+				<div class="ptag">In emotional terms, means-tested welfare is a very degrading and dehumanising process that adds additional strain to people who are already struggling. It creates and then stigmatises a class of people who receive targeted welfare, which results in those programs being much easier to cut. When the welfare system is complex and difficult to understand, it becomes harder to mobilise a political defense against those cuts.</div>
+		
+				<!-- <iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen class="youtube"></iframe> -->
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img2"></div></div> -->
+			<article class="info" id="coersion">
+				<h4>It allows people to be genuinely free</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">True freedom means freedom from coercion<a href="https://www.merriam-webster.com/dictionary/freedom"><sup>1</sup></a>. If we live in a society that forces people to generate profit for a company in order to stay alive, how can we say that we are truly free?</div>
+		
+				<div class="ptag">A Basic Income gives everybody the security to say "no" to unsafe, illegal, unpleasant or unethical working conditions and financial dependencies within abusive relationships. We teach our children the importance of consent in the bedroom, and it's time we extended the same values economically.</div>
+		
+				<div class="ptag">When people are free from forced work, they're free to do their best work. Many people today want to do something to improve themselves/their community/the world but their time and energy is drained generating profit for an employer.</div>
+		
+				<blockquote>"I am somehow less interested in the weight and convolutions of Einstein's brain than in the near certainty that people of equal talent have lived and died in cotton fields and sweatshops"<br> - Steven Jay Gould</blockquote>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img3"></div></div> -->
+			<article class="info" id="poverty">
+				<h4>It would end poverty</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  <div class="overlay">test</div> 
+				</div>-->
+		
+		
+		
+				<div class="ptag">We live in the most abundant time in history with more empty homes<a href="https://www.domain.com.au/news/empty-homes-the-economic-reasons-behind-investors-keeping-properties-vacant-20170404-gvdc7l/"><sup>1</sup></a> than homeless people<a href="http://www.homelessnessaustralia.org.au/index.php/about-homelessness/homeless-statistics"><sup>2</sup></a> and more food is being produced than can be eaten<a href="https://theconversation.com/melbourne-wastes-200-kg-of-food-per-person-a-year-its-time-to-get-serious-60236"><sup>3</sup></a>, so why do we continue to allow people to go homeless and hungry?</div>
+		
+				<blockquote>"There is nothing new about poverty. What is new, however, is that we have the resources to get rid of it"<br> - Martin Luther King Jr</blockquote>
+		
+				<div class="ptag">We guarantee a certain level of healthcare to all people because an ounce of prevention is worth a pound of cure and we should do the same for poverty, given that poverty is linked with an increased need for child services<a href="https://www.sciencedirect.com/science/article/pii/S0190740916303358"><sup>4</sup></a>, prisons<a href="https://theconversation.com/grand-theft-auto-doesnt-cause-crime-but-poverty-and-alienation-will-56499"><sup>5</sup></a> and policing<a href="https://www.poverties.org/blog/poverty-and-crime"><sup>6</sup></a>.</div>
+		
+				<div class="ptag">The current "default income" is $0/wk and if people want to change that then they have to actively do something about it. With a Basic Income the "default income" would be a livable wage so while poverty may not be eradicated entirely, people would have to actively try to fall into it.</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img4"></div></div> -->
+			<article class="info" id="technologically">
+				<h4>We live in a technologically unprecedented time in history</h4>
+		
+				<!--<div class="sidebar">
+				<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">200 years ago life expectancy was half of what it is today. 75 years ago programming languages didn't exist, 45 years ago machine learning had just been conceptualised, 30 years ago the internet became open to the public. The world is changing and the traditional rules for structuring society don't make sense any more.</div>
+		
+				<div class="ptag">Technology that is currently in its relative infancy such as self-driving cars, Amazon Go, farmbot and machine learning algorithms are predicted to put approximately 50% of the workforce out of a job within the next 20 years<a href="http://www.eng.ox.ac.uk/about/news/new-study-shows-nearly-half-of-us-jobs-at-risk-of-computerisation"><sup>1</sup></a> and while all evidence shows that new "bullshit jobs"<a href="https://www.canberratimes.com.au/public-service/the-modern-phenomenon-of-bullshit-jobs-20130831-2sy3j.html"><sup>2</sup></a> will be invented to keep everyone busy, the reality is that we don't need everybody working to keep society functioning (and if we did then there wouldn't be more job-seekers than there are jobs<a href="https://www.theguardian.com/business/2016/oct/31/only-one-job-advertised-for-every-six-low-skilled-jobseekers-report"><sup>3</sup></a>). For some, this displacement will mean going back to university to study programming but for many without 4+ spare years for retraining, this will be devastating.</div>
+		
+				<div class="ptag">For all of human history up until a few hundred years ago, 80-90% of the population were farmers because they had to be in order to keep everybody alive. Today that figure in Australia is closer to 1%<a href="https://www.nff.org.au/farm-facts.html"><sup>4</sup></a> (and with fully automated farming technology recently introduced to the market<a href="https://www.youtube.com/watch?v=uNkADHZStDE"><sup>5</sup></a> we could see that figure soon move closer to 0%) which leaves a huge amount of "slack" in the economy. The argument that we need to force people to work to earn a living made sense when we needed "all hands on deck" but simply doesn't hold up to the reality of modern day.</div>
+		
+				<blockquote>"You ever think about how bad we had to fuck up to create a world where robots taking all the jobs is somehow a bad thing?"<br> - @heatdeath on twitter</blockquote>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img5"></div></div> -->
+			<article class="info" id="democracy">
+				<h4>A revolution in democracy</h4>
+		
+				<!--<div class="sidebar">
+				<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">Democracy requires participation. If everyone received an unconditional liveable wage they would be able to spend as much (or as little) time and energy engaging in participatory democracy as they want, rather than work-drained activists using whatever free time they have outside of the 9-5. If democracy requires participation and so people don't have time to participate, how can we even say we have a democracy?</div>
+		
+				<blockquote>"One argues that a democratic society cannot persist unless it prepares all of its young with equal care to take on the full responsibilities of citizenship in a competent manner. We all depend on this political competence of our fellow citizens, since we put ourselves at the mercy of their collective judgment about the running of our society"<br> - David F Labaree</blockquote>
+		
+				<div class="ptag">Outside of participatory democracy, new options like a Direct Democracy would become a lot more viable if everyone who wanted to participate was guaranteed to have time to participate. And perhaps even more importantly, when we're free from work we're free to think about other things. We're free to dream bigger and ask structural questions about our society. How can we expect to solve the monumental problems we face today while we're all trapped in an endless treadmill of work? Every issue becomes easier to solve when people have the time and energy to care and get involved</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img5"></div></div> -->
+			<article class="info" id="empower">
+				<h4>The role of government should be to empower people</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					 <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">Traditional thinking would suggest that in order to empower people and combat poverty that the government should provide services, but studies<a href="http://www.scottsantens.com/giving-goods-and-services-vs-giving-money"><sup>1</sup></a><a href="https://www.youtube.com/watch?v=bArH8r8jJ4g"><sup>2</sup></a><a href="https://www.youtube.com/watch?v=ytg-Uk5eOww"><sup>3</sup></a> have shown that it's more effective to just give cash directly because people in poverty know best how to use the money allocated to them. We live in the most educated society in history<a href="https://theconversation.com/the-world-is-more-educated-than-its-ever-been-how-51224"><sup>4</sup></a> and we need to acknowledge that poverty is primarily due to influences in our collective economy rather than an individual's lack of education.</div>
+		
+				<div class="ptag">Comparing a Basic Income to a means tested program that is only targeted towards those in dire poverty gets to the heart of a question around what the role of government should be. Does it exist as a pity charity for the losers of our economy or should its role be to broadly empower all citizens?</div>
+		
+				<blockquote>"The task of government is not to make decisions for you or for anyone. The task of government is to enable you to make decisions for yourselves. Not to see the truth of that statement is fundamentally to mistake the genius of democracy. We have made too many mistakes of this type-but no more. Our job is to get resources to people in need and then to let them run their own lives."<br> - Richard Nixon</blockquote>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img7"></div></div> -->
+			<article class="info" id="workers">
+				<h4>It would empower workers</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					 <div class="overlay">test</div> 
+				</div>-->
+				
+				<div class="ptag">A Basic Income would ensure that even the poorest amongst us has the ability to walk away from bad working conditions. Empowered from traditional fears over their livelihoods, workers would be able to strike and withhold their labour indefinitely.</div>
+		
+				<blockquote>"Can the hungry go on a hunger strike? Non-violence is a piece of theatre. You need an audience. What can you do when you have no audience? People have the right to resist annihilation."<br> - Arundhati Roy</blockquote>
+		
+				<div class="ptag">But to fight for unions and workers rights isn't enough, it's time for a movement centered around human rights. By only valuing labour in the form of paid employment, the modern labour movement is inadvertently propping up a system of exploitation because the class structures within employment are fundamentally exploitative.</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img8"></div></div> -->
+			<article class="info" id="capitalism">
+				<h4>It would fix internal contradictions within capitalism</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					 <div class="overlay">test</div> 
+				</div>-->
+		
+				
+				<div class="ptag">We're told that capitalism is a system in which you are rewarded for meeting the needs of others, but when the top 1% of Australians own more wealth than bottom 70% combined<a href="https://www.theguardian.com/australia-news/2018/jan/22/top-1-per-cent-of-australians-own-more-wealth-than-bottom-70-per-cent-combined"><sup>1</sup></a>, the economy of meeting peoples needs start to look a lot more like an economy of meeting the needs of the wealthiest.</div>
+		
+				<div class="ptag">We're told that capitalism allows for consumer preferences to be heard as people vote for the products they like with their dollars, but when many people have no disposable income to "vote" with, a system that is intended to function as a democracy in reality functions more closely to a dictatorship.</div>
+		
+				<div class="ptag">We're told that capitalism fosters innovation and entrepeneurialism, but we also know that innovation thrives when people have the safety to take risks and fail<a href="https://equitablegrowth.org/protecting-against-risk-can-help-boost-u-s-entrepreneurship/"><sup>2</sup></a>. Given how many people are insecure and incapable of taking risks<a href="https://www.abc.net.au/news/2017-08-23/newstart-not-enough-to-afford-basic-needs/8835678"><sup>3</sup></a>, how can we say that we are fostering innovation to the fullest?</div>
+		
+				<blockquote>"The hope is that policies like [Basic Income] can help people struggling just to survive and allow them to get on their feet, be entrepreneurial and be more creative"<br> - Richard Branson</blockquote>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img8"></div></div> -->
+			<article class="info" id="pay">
+				<h4>How do you pay for it?</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">A long-form article answering this question from various perspectives is linked <a href="https://greenagenda.org.au/2020/08/how-much-does-a-basic-income-cost/" class="extlink">here</a>, but the short version is that:</div>		
+				<ol>
+					<li>money is a tool used to represent value<a href="https://youtu.be/InwVM6s7WoY"><sup>1</sup></a></li>
+					<li>we live in the most abundant time in history<a href="https://www.domain.com.au/news/empty-homes-the-economic-reasons-behind-investors-keeping-properties-vacant-20170404-gvdc7l/"><sup>2</sup></a> <a href="https://theconversation.com/melbourne-wastes-200-kg-of-food-per-person-a-year-its-time-to-get-serious-60236"><sup>3</sup></a></li>
+				</ol>
+		
+				<div class="ptag">Australia is estimated to be the second wealthiest country on average per person in the world with about $580,000 per adult<a href="https://amp.theage.com.au/business/the-economy/the-wealthy-country-australians-are-the-richest-people-in-the-world-20181109-p50eyc.html?__twitter_impression=true&fbclid=IwAR01olKPnKXXtek4BZUesVXygjToUi8qYZOJhsEiz01R8jBE8qchHPsQ4-0"><sup>4</sup></a>. The problem isn't that we live in a time of scarcity, the problem is that the wealth of our society is poorly distributed.</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img10"></div></div> -->
+			<article class="info" id="entitled">
+				<h4>Why are you entitled to this?</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					 <div class="overlay">test</div> 
+				</div>-->
+		
+		
+				<div class="ptag">Most of the wealth in our society is not the result of anyone alive today<a href="https://medium.com/economicsecproj/technological-inheritance-and-the-case-for-a-basic-income-ded373a69c8e"><sup>1</sup></a>. From the land and resources inherent in the earth to the scientific advancements of previous generations, we have been given incredible gifts, but those gifts have been very unevenly distributed throughout society<a href="https://www.theguardian.com/inequality/2017/nov/14/worlds-richest-wealth-credit-suisse"><sup>2</sup></a>. To suggest that wealth is purely generated by individuals is to suggest that Mark Zuckerberg could have made Facebook on his own even if he was born hundreds of years ago.</div>
+		
+				<blockquote>"I personally think that society is responsible for a very significant percentage of what I've earned. If you stick me down in the middle of Bangladesh or Peru or someplace, you'll find out how much this talent is going to produce in the wrong kind of soil."<br> - Warren Buffett</blockquote>
+		
+				<div class="ptag">With productivity on the rise<a href="http://www.tradingeconomics.com/australia/productivity"><sup>3</sup></a>, growing automation is on target to create trillions in new value<a href="https://www.mckinsey.com/featured-insights/digital-disruption/harnessing-automation-for-a-future-that-works"><sup>4</sup></a>. What is more entitled, to think that you deserve basic necessities in a time of overabundance or to think you deserve luxuries before others deserve basic necessities? In a world of finite resources the limits on our freedom should end at the point upon which they encroach upon others' freedoms.</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img11"></div></div> -->
+			<article class="info" id="pitch">
+				<h4>How can you pitch the idea to wealthy people?</h4>
+		
+				<!--<div class="sidebar">
+				<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="overlay">test</div> 
+				</div>-->
+		
+		
+		
+				<div class="ptag">One of the more interesting things about the idea is that it seems we don't have to. While wealthy people are renowned for tax avoidance<a href="https://en.wikipedia.org/wiki/Panama_Papers"><sup>1</sup></a>, some of the wealthiest people in the world are lining up to endorse the idea<a href="https://www.cnbc.com/2017/12/27/what-billionaires-say-about-universal-basic-income-in-2017.html"><sup>2</sup></a> and unabiguously state that they should be taxed to pay for it<a href="https://www.youtube.com/watch?v=QM8l623AouM"><sup>3</sup></a>. These people largely made their wealth within tech industries and their reasoning typically is that the nature of work is changing and will continue to change due to advances in technology. They suggest that we are going to need a much stronger social safety net in order to effectively transition through the displacements they're predicting over the coming decades.</div> 
+		
+				<div class="ptag">But if you did want to make the case, one way is to point out that our economy is not a zero-sum game<a href="https://www.youtube.com/watch?v=rvskMHn0sqQ"><sup>4</sup></a>. It's time to move past the widely debunked trickle-down economic narriatives<a href="https://www.youtube.com/watch?v=CKCvf8E7V1g"><sup>5</sup></a> to see that everyone does better when everyone does better. By distributing money to those who most need it (and spend it), we can increase the Velocity of Money<a href="http://tim-ellis.com/post/80787565427/on-stimulus-and-the-velocity-of-money-a-parable"><sup>6</sup></a> and therefore increase demand in the market<a href="https://www.youtube.com/watch?v=nT2JKf-rcTk"><sup>7</sup></a>.</div>
+		
+				<blockquote>"Give [money] to the people at the bottom and the people at the top will have it before night, anyhow. But it will at least have passed through the poor fellow's hands."<br> - Will Rogers</blockquote>
+		
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img12"></div></div> -->
+			<article class="info" id="flight">
+				<h4>I'm worried about capital flight</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					 <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">This comes from a place of the most absolute defeatism. To say that the capital owners have all the power in the world and that nothing can be done about it and no policy can ever be achieved unless it upholds the current power structures. If these people have no interest in being a part of our society and only stay here to take advantage of our tax laws then we should welcome their leaving.</div>
+		
+				<blockquote>"If tax really were a pure burden, all rich individuals and companies would move to Paraguay or Bulgaria, where the top rate of income tax is 10%. Of course, this does not happen because, in those countries, in return for low tax you get poor public services. Conversely, most rich Swedes don't go into tax exile because of their 60% top income tax rate, because they get a good welfare state and excellent education in return. Japanese and German companies don't move out of their countries in droves despite some of the highest corporate income tax rates in the world (31% and 30% respectively) because they get good infrastructure, well-educated workers, strong public support for research and development, and well-functioning administrative and legal systems"<br> - Ha-Joon Chang</blockquote>
+		
+				<div class="ptag">But even if they do leave, they're not taking our land, roads, schools, workers, electricity grids or internet infrastructure. Everything at the core of what makes our society function. Our economy is driven by demand, not by supply - and by leaving and removing their business they would open up new markets for local entrepreneurs who want to participate in our society.</div>		
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img13"></div></div> -->
+			<article class="info" id="hyper">
+				<h4>I'm worried about hyperinflation</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					 <div class="overlay">test</div> 
+				</div>-->
+				
+				<div class="ptag">Hyperinflation is a very complex topic that isn't even fully understood by a lot of economists, but is generally understood to be related to the ratio between money in circulation and products in circulation<a href="https://www.youtube.com/watch?v=afWqKcqntfs"><sup>1</sup></a>. Since most Basic Income proposals aren't funded through increasing the money supply that ratio would remain unchanged from the current ratio.</div>
+		
+				<!-- <div class="ptag">It is also generally understood that prices are related to market competition<a href="https://en.wikipedia.org/wiki/Competition_(economics)"><sup>2</sup></a> and as long as there is genuine competition within a market then it is unlikely that prices would rise. With or without a Basic Income the government should be .</div>
+		 -->
+				<div class="ptag">The implication usually behind this line of logic is that if everyone has their basic needs met then it will crash the economy. If true, this is a convincing argument for moving to a radically different economic system. Another implication is that if poor people are given more money, then they end up having less money. The reasonable thing to do if that were the case would be to abolish Centrelink and the minimum wage in order to help poor people. If this line of reasoning was accurate, you could hypothetically counteract the hyperinflation by taxing people and reducing the money supply.</div>
+		
+				<div class="ptag">At the end of the day, we have to ask if hyperinflation is a legitemate critique or just a talking point fed to us by people who prefer the status quo. To figure out which it is, think about whether you would have opposed the abolition of slavery because it could have caused hyperinflation.</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img14"></div></div> -->
+			<article class="info" id="lazy">
+				<h4>Without jobs, won't people get bored and lazy?</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+					 <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">There will still be jobs. A Basic Income isn't an end to work, it is simply an end to forcing people to work in order to meet their basic needs. Regardless of how people choose to spend their time, we need an affirmative statement that says all people are unconditionally entitled to the resources they need to live.</div>
+		
+				<div class="ptag">The idea that people will become destitute and idle when given the option not to work is completely disconnected from any psychological analysis of motivation. For instance, looking at Maslow's Hierarchy of Needs<a href="https://en.wikipedia.org/wiki/Maslow%27s_hierarchy_of_needs"><sup>1</sup></a> a Basic Income would cover the two base levels relating to fundamental needs but would still leave many needs to be fulfilled that can't be achieved solely using money.</div>
+		
+				<blockquote>"Look at little children who haven't yet started school and therefore haven't yet had their curiosity and playfulness suppressed for the sake of work. Are they lazy? No. They are almost continuously active when not sleeping. They are always getting into things, motivated by curiosity, and in their play they make up stories, build things, create art, and philosophize (yes, philosophize) about the world around them.  There is no reason to think the drives for such activities naturally decline with age.  They decline because our schools, which value work and devalue play, drill them out of people; and then tedious jobs and careers continue to drill them out.  These drives don't decline in hunter-gatherers with age, and they wouldn't decline in us either if it weren't for all the work imposed on us"<br> - Peter Gray</blockquote> 
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img16"></div></div> -->
+			<article class="info" id="drugs">
+				<h4>Won't people just spend it on drugs?</h4>
+		
+			  <!--<div class="sidebar">
+				   <iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  <div class="overlay">test</div> 
+			  </div>-->
+		
+			  <div class="ptag">In cash transfer studies is there no evidence of this, however there is evidence of the exact opposite: that recipients start eating better and taking better care of themselves. Addiction is more complicated than it's often made out to be and fundamentally comes from a place of escapism<a href="https://www.youtube.com/watch?v=PY9DcIMGxMs"><sup>1</sup></a>. We should prioritise treatment and building a society that people don't feel the need to escape from, above demonising people with an illness.</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img17"></div></div> -->
+			<article class="info" id="dignity">
+				<h4>What about the dignity of work?</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">If work is as appealing as its advocates claim it is, then we should make it voluntary. When provided with an unconditional liveable wage people will choose to work because it brings them so much dignity. There is no way to know if this would actually happen, but there's also no way to know if work is the source of the value it's attributed to. We live in a society that puts an incredible emphasis on paid labour, it's possible that people gain social benefits from doing things that are considered socially acceptable.</div>
+		
+				<div class="ptag">We should also be extremely careful when addressing this issue because the implication is that those who do not work don't have dignity. Does this supposed to mean that children and less abled people don't have dignity? Or can dignity come from other sources that don't require you to sell your body?</div>
+		
+				<blockquote>"The view that people need work in order to be happy is closely tied to the patronizing view that people can't handle freedom. That dismal view of human nature has been promoted for centuries, and reinforced in schools, in order to maintain a placid workforce."<br> - Peter Gray</blockquote>
+		
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img18"></div></div> -->
+			<article class="info" id="dependent">
+				<h4>I don't want people to be dependent on the government</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">It's not a question of being dependent on "government" but rather dependent on society (after all, the purpose of government is to enforce the rules that we collectively agree on as a society). Did you build your house? Did you grow your food? Do you personally test the food safety and product quality of everything you buy? If your employer were to not pay you, are you dependent on the government legal system to hold them accountable?</div>
+		
+				<div class="ptag">We live in a complex interdependent society today and we will continue to live in a complex interdependent society with a Basic Income. None of us alone can stand against the forces of nature.</div>
+		
+				<blockquote>"There's a much quoted proverb in the world of finance that I hate: Give a man a fish and you will feed him for a day. Teach a man how to fish and you will feed him for a lifetime. I say bullshit to this. Do the poor really not know how to fish? And what good is it to know how to fish if the rights to fish are owned by powerful landlords? And if the river is polluted by upstream tyrants? And what good is it to be taught to fish if the price and distribution of fish is controlled by conglomerate monopolies?"<br> - Ananya Roy</blockquote>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img18"></div></div> -->
+			<article class="info" id="cut">
+				<h4>I'm worried this will be used as a tool to cut government programs</h4>
+		
+				<!--<div class="sidebar">
+					<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				  <div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">The critique implies that we sit at an ideal equilibrium of government programs and any cuts to one ensures cuts to another. By this logic, someone advocating for free higher education should be to blame for cuts to healthcare. There is a double-standard here that if applied universally would mean we wouldn't support any change in government at all.</div>
+		
+				<div class="ptag">But let's be explicitly clear: a Basic Income shouldn't be used as an excuse to gut the current welfare system and leave people worse off than they are today. Programs such as the NDIS and public education would still play a critical role in a world with a Basic Income.</div>
+		
+				<div class="ptag">What is likely to happen is that many programs dedicated to serving people in poverty would have far less clients when every citizen is unconditionally receiving a livable wage. Our current tangled web of means-tested bureaucracy would not need to be cut, it would simply become redundant.</div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img19"></div></div> -->
+			<article class="info" id="trial">
+				<h4>We need to trial the idea more first</h4>
+		
+				<!--<div class="sidebar">
+				<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">Given that the policy is universal by definition, a Basic Income can't be trialled because every trial will be insufficient. (Much like with vaccines against diseases, a vaccination against poverty would likely show significantly greater results due to "herd immunity"<a href="https://www.theguardian.com/society/ng-interactive/2015/feb/05/-sp-watch-how-measles-outbreak-spreads-when-kids-get-vaccinated"><sup>1</sup></a>). Given that all trials will be insufficient, you could say that we have had a trial running here in Australia for the past 70 years in the form of an various social security welfare payments that have successfully saved millions from abject poverty. 
+				<!-- Unfortunately many others are not saved<a href="https://www.homelessnessaustralia.org.au/about/homelessness-statistics"><sup>2</sup></a>. -->
+				</div>
+		
+				<div class="ptag">But Australian welfare is very heavily means tested so a reasonable question to ask is if non-means-tested welfare has been trialled. It has. Many times<a href="https://www.reddit.com/r/BasicIncome/wiki/index#wiki_that.27s_all_very_well.2C_but_where.27s_the_evidence.3F"><sup>2</sup></a> throughout a variety of different cultures and regularly shows positive results such as increased mental/physical health, decreases in crime, students able to more clearly focus on studies, new parents being able to devote more time to taking care of children.</div>
+		
+				<blockquote>"It is weird to me that the abolition of poverty is something that we need to prove would be good. The idea that we need these trials to see if it works is mistaken and a bit of a distraction. Basic income is mostly a matter of taking economic security and freedom seriously. This is an ethical debate more than anything else."<br> - Jason Murphy</blockquote>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img20"></div></div> -->
+			<article class="info" id="JG">
+				<h4>I prefer the idea of a "Job Guarantee"</h4>
+		
+				<!--<div class="sidebar">
+				<iframe src="https://www.youtube.com/embed/kl39KHS07Xc?wmode=transparent&rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+				<div class="overlay">test</div> 
+				</div>-->
+		
+				<div class="ptag">There is nothing inherent that excludes the policies from being implemented simultaneously and advocates tend to agree that having both would be ideal. The conflict between the two programs typically tend to be in regards to which policy should be prioritised.</div>
+		
+				<div class="ptag">A long-form article summarising some reasons why the Basic Income should be prioritised is linked <a href="https://greenagenda.org.au/2018/10/prioritise-ubi-over-a-job-guarantee/" class="extlink">here</a>, but this is the short version:</div>
+				<ol>
+					<li>A Job Guarantee must be optional in order to be progressive and non-coersive and we don't currently have a safety net that allows all people to safely refuse work. </li>
+					<li>A Basic Income changes the political narrative that says people's dignity and value are derived from their jobs and paves the way for new methods of structuring society. </li>
+					<li>We must be bold and unambiguous in saying that poverty is unacceptable and that every life has value regardless of whether or not they're working. </li>
+				</ol>
+		
+				<!-- <div class="h_iframe">
+					<iframe src="https://greenagenda.org.au/2018/10/prioritise-ubi-over-a-job-guarantee/?utm_source=facebook&utm_medium=article&utm_campaign=facebook-article-prioritise-ubi-over-a-job-guarantee" width="800px" id="greenagenda">
+					<a href="https://greenagenda.org.au/2018/10/prioritise-ubi-over-a-job-guarantee/?utm_source=facebook&utm_medium=article&utm_campaign=facebook-article-prioritise-ubi-over-a-job-guarantee">via this link</a>
+					</iframe>
+				  </div> -->
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img21"></div></div> -->
+			<article class="info" id="involved">
+				<h4>How can I get involved?</h4>
+		
+				<div class="ptag">We hold two kinds of online events each month:</div> 
+		
+				<div class="ptag">The <span class="bold">Fair Go Discussion Group</span> in which we discuss and explore the concept of a Basic Income and adjacent issues. There is always a theme and there are sometimes special guests with particular insight into that theme. This event is a great space to probe the idea of a Basic Income and ask any questions you may have.</div> 
 
+				<div class="ptag">The <span class="bold">Action Group</span> which is for people who want to make a Basic Income a reality in Australia. This event is an opportunity to connect with a national network of Basic Income advocates as we discuss and strategise tactics.</div> 
+		
+				<div class="ptag"><a href="https://www.meetup.com/BasicIncomeAu/" class="extlink">Event details for both can be found here</a></div>
+
+				<div class="ptag">If you're feeling shy about coming along and voicing your opinions and strategic ideas, just remember that the movement can never grow if new people don't join in.</div>
+
+				<div class="ptag">If the meetings are inaccessible to you, <span class="extlink" onclick="openSidebar()">come join our chat.</span></div>
+			</article>
+			<!-- <div class="viewportshell"><div class="viewport" id="img20"></div></div>
+			<article class="info" id="2020">
+				<h4>2020 Events</h4>
+		
+				<div class="ptag">In 2020 we are holding quarterly community events in central Melbourne. If the <a href="#involved" class="extlink">monthly events</a> are for activists looking to take action, the quarterly community events are an entry-point for people to learn more about the ideas around a Basic Income.</div>
+		
+				<div class="ptag"><span class="bold">What is Basic Income?</span> (27th Feb) - <a href="https://www.trybooking.com/book/event?eid=601379&" class="extlink">RSVP HERE</a></div>
+		
+				<div class="ptag"><span class="bold">How a Basic Income can help Economics</span> (17th June) - Details TBD</div>
+					
+				<div class="ptag"><span class="bold">How a Basic Income can help the Environment</span> (17th Sept) - Details TBD</div>
+					
+				<div class="ptag"><span class="bold">How a Basic Income can help Democracy</span> (27th Nov) - Details TBD</div>
+			
+			</article>
+			<div class="viewportshell"><div class="viewport" id="img21"></div></div>
+			<article class="info" id="conveners">
+				<h4>Meet the conveners</h4>
+		
+				<div class="convener">
+					<h4>Melbourne <br><br>Josh McGee</h4>
+					<img src="images/mcgee.png"/>
+					<div class="convenertext ptag">
+						Hi I'm Josh, I'm currently studying a double degree in Robotics Engineering and Computer Science. In my early twenties I explored the world while living in New York, London and Oslo. I've been living in Melbourne since the beginning of 2017 and started this Basic Income action group shortly after arriving. 
+						<br><br>
+						When I look at the level of technology and abundance around us today and yet how much poverty and unnecessary struggle continues, I can clearly see that my goal is to bridge that gap. I believe that it should be the governments job to actively put people out of a job so that they can spend their lives doing whatever is most valuable to themselves. There are many very different reasons to support Basic Income but that's where the conversation starts for me.
+					</div>
+				</div>
+		
+				<div class="convener">
+					<h4>Adelaide <br><br>David Upton</h4>
+					<img src="images/upton.png"  width="223" />
+					<div class="convenertext ptag">
+						Hello, I'm David, I live in Prospect, a leafy suburb in Adelaide with my wife Andrea. No kids or pets. I'm retired now after working on the land, and long term jobs in Road Surveys and Car seat manufacturing and in my latter years, in finance. I grew up on a farm and am still have a lot of country in me.
+						<br><br>
+						When I retired, I starting blogging on the net, and came across UBI. Well it jumped out at me actually, and I was compelled to research and study it to where I aspired to become an activist for it. I totally believe in the concept of a basic income, and am confident the hurdles and scepticism can be overcome, and that we, the general public can appreciate the obvious benefits it will bring and what's more how technological unemployment will necessitate a scheme like Universal Basic Income.
+					</div>
+				</div>
+			</article>	 -->
+		</div>
+		<iframe id="sidePanel" src="https://cmail.space/?t=BIAu"></iframe>
+	</div>
 </body>
-
+	<script src="./JTML.js"></script>
+	<script src="./script.js"></script>
 </html>
