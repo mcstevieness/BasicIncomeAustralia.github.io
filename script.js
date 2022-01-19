@@ -53,7 +53,7 @@ navData.push(new Nav(4,"#involved","click here to find out"))
 
 function generateNav() {
 	titles.forEach((title,i)=>{
-		console.log(title);
+		// console.log(title);
 		let k = i+1;
 		let nav = new JTML('#nav');
 		let panel = new JTML('div');
@@ -75,7 +75,7 @@ function generateNav() {
 
 		
 		nav.add(panel);
-		console.log(nav);
+		// console.log(nav);
 	})
 }
 
@@ -174,7 +174,7 @@ function checkSidebar() {
 }
 
 function onResize(e) {
-	console.log(e[0].borderBoxSize[0].inlineSize);
+	// console.log(e[0].borderBoxSize[0].inlineSize);
 	currentWidth = e[0].borderBoxSize[0].inlineSize;
 	tooSmallForChat = false;
 	if (currentWidth < 930) {
