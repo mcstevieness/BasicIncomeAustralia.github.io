@@ -203,31 +203,12 @@ function onResize(e) {
 		h2.style['font-size'] = 'calc(0.044 * var(--bodyWidth))'
 		h2.style['left'] = 'calc(0.59 * var(--bodyWidth))'
 	}
-
-
-	// h2 {
-	// 	font-size:8.5vw;
-	// 	left:17vw;
-	// 	top: calc(800px - 10vw);
-	// 	transform: skew(-7deg) rotate(-7deg);
-	// }
 }
 
 
 
 function init() {
 	generateNav();
-
-	// var y = document.getElementById("nav").getElementsByTagName("a");
-	// for (var i = 0; i < y.length; i++) {
-	// 	y[i].outerHTML+='<div class="menubar"></div>';
-	// 	y[i].addEventListener("click", burgerclick);
-	// }
-
-	// var z = document.getElementsByTagName("h4");
-	// for (var i = 0; i < z.length; i++) {
-	// 	z[i].outerHTML+='<div class="articlebar"></div>';
-	// }
 
 	document.getElementById("contact1").onclick = function() {window.location="http://meetup.com/BasicIncomeAu";};
 	document.getElementById("contact2").onclick = function() {checkSidebar();};
