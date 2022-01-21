@@ -4,9 +4,9 @@ import { AuthHandler } from 'https://joshprojects.site/AuthHandler.js';
 import { Jerver } from "https://joshprojects.site/Jerver.js";
 
 async function init() {
-	console.log("howdy");
-	console.log(AuthHandler);
-	console.log(Jerver);
+	// console.log("howdy");
+	// console.log(AuthHandler);
+	// console.log(Jerver);
 
 	// Your web app's Firebase configuration
 	const firebaseConfig = {
