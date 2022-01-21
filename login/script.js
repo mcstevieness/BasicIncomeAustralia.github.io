@@ -22,10 +22,23 @@ async function init() {
     // 	authHandler.logout();
     // })
     let jerver = new Jerver(authHandler);
+    jerver.on("message", data => {
+        console.log(`the message is ${data}`);
+    });
+    jerver.on("greetings", (elem) => {
+        console.log(elem);
+    });
     jerver.on('goto', (newLocation) => {
         console.log(newLocation);
         // this.location.href = newLocation;
     });
     jerver.ready();
+    jerver.req("salutations", "Howdy!").then((response1) => {
+        console.log(response1);
+    });
+    let response2 = await jerver.req("salutations", "Wassup!");
+    let response3 = await jerver.req("salutations", "Hello!");
+    console.log(response2);
+    console.log(response3);
 }
 document.addEventListener("DOMContentLoaded", init);
