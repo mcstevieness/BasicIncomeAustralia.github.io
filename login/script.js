@@ -2,6 +2,11 @@
 import { AuthHandler } from 'https://joshprojects.site/AuthHandler.js';
 // @ts-ignore
 import { Jerver } from "https://joshprojects.site/Jerver.js";
+// source: https://stackoverflow.com/questions/52450290/why-is-this-simple-javascript-xor-encryption-algorithm-not-working
+function encryptXor(text, key) {
+    // @ts-ignore
+    return Array.from(text, (c, i) => String.fromCharCode(c.charCodeAt() ^ key.charCodeAt(i % key.length))).join('');
+}
 async function init() {
     // console.log("howdy");
     // console.log(AuthHandler);
@@ -22,20 +27,16 @@ async function init() {
     // 	authHandler.logout();
     // })
     let jerver = new Jerver(authHandler);
-    console.time('generateKey');
-    let key = await window.crypto.subtle.generateKey({
-        name: "RSA-OAEP",
-        // Consider using a 4096-bit key for systems that require long-term security
-        modulusLength: 2048,
-        publicExponent: new Uint8Array([1, 0, 1]),
-        hash: "SHA-256",
-    }, true, ["encrypt", "decrypt"]);
-    console.timeEnd('generateKey');
     jerver.on('userStatus', (userStatus) => {
         console.log(userStatus);
+        let randomKey = '123456789';
+        let googleDoc = `https://docs.google.com/document/d/1iZ3GBN6BQaePC_31zuDka20-Fhphy2UW8xczDCkMtnE/edit?usp=sharing`;
+        let encryptedLocation = encryptXor('newLocation', randomKey);
+        console.log(`encrypted: ${encryptedLocation}`);
         let urlObj = new URL(window.location.href);
         let rParam = urlObj.searchParams.get("r");
         let newLocation = `https://basicincomeaustralia.com`;
+        console.log(`original: ${newLocation}`);
         if (userStatus == 'newuser') {
             // if it's a new user then always go to newuser page
             newLocation += '/newuser';
@@ -47,6 +48,7 @@ async function init() {
         else {
             // decode rParam if it has been provided
             if (rParam) {
+                newLocation = encryptXor(rParam, randomKey);
                 console.log(`decode rParam here and then replace newLocation with that`);
                 console.log(rParam);
             }
