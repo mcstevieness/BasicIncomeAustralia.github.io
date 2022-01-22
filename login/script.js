@@ -22,15 +22,29 @@ async function init() {
     // 	authHandler.logout();
     // })
     let jerver = new Jerver(authHandler);
-    jerver.on('goto', (newLocation) => {
-        console.log(newLocation);
+    jerver.on('userStatus', (userStatus) => {
+        console.log(userStatus);
         let urlObj = new URL(window.location.href);
         let rParam = urlObj.searchParams.get("r");
-        if (rParam) {
-            console.log(rParam);
+        let newLocation = `https://basicincomeaustralia.com`;
+        if (userStatus == 'newuser') {
+            newLocation += '/newuser';
+            if (rParam) {
+                console.log(rParam);
+                newLocation += `?r=${rParam}`;
+            }
+            else {
+                console.log("there is no rParam");
+            }
         }
         else {
-            console.log("there is no rParam");
+            if (rParam) {
+                console.log(`decode rParam here and then replace newLocation with that`);
+                console.log(rParam);
+            }
+            else {
+                console.log("there is no rParam so go to the default route: home");
+            }
         }
         // this.location.href = newLocation;
     });
