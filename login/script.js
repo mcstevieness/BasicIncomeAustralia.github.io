@@ -22,28 +22,35 @@ async function init() {
     // 	authHandler.logout();
     // })
     let jerver = new Jerver(authHandler);
+    console.time('generateKey');
+    let key = await window.crypto.subtle.generateKey({
+        name: "RSA-OAEP",
+        // Consider using a 4096-bit key for systems that require long-term security
+        modulusLength: 2048,
+        publicExponent: new Uint8Array([1, 0, 1]),
+        hash: "SHA-256",
+    }, true, ["encrypt", "decrypt"]);
+    console.timeEnd('generateKey');
     jerver.on('userStatus', (userStatus) => {
         console.log(userStatus);
         let urlObj = new URL(window.location.href);
         let rParam = urlObj.searchParams.get("r");
         let newLocation = `https://basicincomeaustralia.com`;
         if (userStatus == 'newuser') {
+            // if it's a new user then always go to newuser page
             newLocation += '/newuser';
             if (rParam) {
+                // but only add the rParam if it exits
                 newLocation += `?r=${rParam}`;
-            }
-            else {
-                console.log("there is no rParam so go to newuser page");
             }
         }
         else {
+            // decode rParam if it has been provided
             if (rParam) {
                 console.log(`decode rParam here and then replace newLocation with that`);
                 console.log(rParam);
             }
-            else {
-                console.log("there is no rParam so go to the default route: home");
-            }
+            // otherwise by default they will return home
         }
         console.log(`now redirecting to ${newLocation}`);
         // this.location.href = newLocation;
