@@ -31,7 +31,7 @@ async function init() {
         console.log(userStatus);
         let randomKey = '123456789';
         let googleDoc = `https://docs.google.com/document/d/1iZ3GBN6BQaePC_31zuDka20-Fhphy2UW8xczDCkMtnE/edit?usp=sharing`;
-        let encryptedLocation = encryptXor('newLocation', randomKey);
+        let encryptedLocation = encryptXor(googleDoc, randomKey);
         console.log(`encrypted: ${encryptedLocation}`);
         console.log(`encodeURIComponent: ${encodeURIComponent(encryptedLocation)}`);
         let urlObj = new URL(window.location.href);
