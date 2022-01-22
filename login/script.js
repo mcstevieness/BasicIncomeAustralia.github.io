@@ -35,6 +35,9 @@ async function init() {
         console.log(`encrypted: ${encryptedLocation}`);
         console.log(`encodeURIComponent: ${encodeURIComponent(encryptedLocation)}`);
         let urlObj = new URL(window.location.href);
+        urlObj.searchParams.set("r", encryptedLocation);
+        history.pushState(null, '', urlObj.toString());
+        urlObj = new URL(window.location.href);
         let rParam = urlObj.searchParams.get("r");
         let newLocation = `https://basicincomeaustralia.com`;
         console.log(`original: ${newLocation}`);
