@@ -122,7 +122,7 @@ input {
 	width: 100%;
 }
 
-label {
+p, label {
 	font-family: 'Karla';
 }
 
