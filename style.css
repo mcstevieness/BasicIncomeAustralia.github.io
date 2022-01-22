@@ -434,6 +434,18 @@ sup:hover {
 }
 
 
+#buttonHolder > button {
+	border-radius: 40px;
+    border: none;
+    font-family: 'Karla',sans-serif;
+    background-color: white;
+}
+
+.or {
+	font-family: 'Palanquin Dark';
+}
+
+
 /*
 
 #nav > div > .ptag > a {
