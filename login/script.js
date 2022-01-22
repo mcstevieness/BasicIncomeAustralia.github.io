@@ -30,11 +30,10 @@ async function init() {
         if (userStatus == 'newuser') {
             newLocation += '/newuser';
             if (rParam) {
-                console.log(rParam);
                 newLocation += `?r=${rParam}`;
             }
             else {
-                console.log("there is no rParam");
+                console.log("there is no rParam so go to newuser page");
             }
         }
         else {
@@ -46,6 +45,7 @@ async function init() {
                 console.log("there is no rParam so go to the default route: home");
             }
         }
+        console.log(`now redirecting to ${newLocation}`);
         // this.location.href = newLocation;
     });
     jerver.ready();
