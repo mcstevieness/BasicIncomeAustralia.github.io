@@ -30,6 +30,13 @@ async function init() {
 
 	jerver.on('goto',(newLocation)=>{
 		console.log(newLocation);
+		let urlObj = new URL(window.location.href);
+		let rParam = urlObj.searchParams.get("r");
+		if (rParam) {
+			console.log(rParam)
+		} else {
+			console.log("there is no rParam")
+		}
 		// this.location.href = newLocation;
 	})
 
