@@ -114,6 +114,17 @@ h5 {
 	margin: 0px;
 }
 
+input {
+	border-radius: 100px;
+    border: none;
+    padding: 10px 15px;
+    box-sizing: border-box;
+}
+
+label {
+	font-family: 'Karla';
+}
+
 
 #globalContainer {
 	width: 100vw;
