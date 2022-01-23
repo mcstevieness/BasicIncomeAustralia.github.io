@@ -33,7 +33,7 @@ async function init() {
         let googleDoc = `https://docs.google.com/document/d/1iZ3GBN6BQaePC_31zuDka20-Fhphy2UW8xczDCkMtnE/edit?usp=sharing`;
         let encryptedLocation = encryptXor(googleDoc, randomKey);
         console.log(`encrypted: ${encryptedLocation}`);
-        console.log(`encodeURIComponent: ${encodeURIComponent(encryptedLocation)}`);
+        // console.log(`encodeURIComponent: ${encodeURIComponent(encryptedLocation)}`)
         let urlObj = new URL(window.location.href);
         urlObj.searchParams.set("r", encryptedLocation);
         history.pushState(null, '', urlObj.toString());
@@ -42,8 +42,8 @@ async function init() {
         let newLocation = `https://basicincomeaustralia.com`;
         console.log(`original: ${newLocation}`);
         if (userStatus == 'newuser') {
-            // if it's a new user then always go to newuser page
-            newLocation += '/newuser';
+            // if it's a new user then always go to welcome page
+            newLocation += '/welcome';
             if (rParam) {
                 // but only add the rParam if it exits
                 newLocation += `?r=${rParam}`;
