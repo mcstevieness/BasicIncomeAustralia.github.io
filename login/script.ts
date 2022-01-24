@@ -10,7 +10,7 @@ function encryptXor(text, key) {
     ).join('');
 }
 
-async function init() {
+// async function init() {
 	// console.log("howdy");
 	// console.log(AuthHandler);
 	// console.log(Jerver);
@@ -26,7 +26,7 @@ async function init() {
 	};
 
 	let authHandler = new AuthHandler(firebaseConfig,'#signInContainer',['email','google']);
-	console.log(authHandler);
+	// console.log(authHandler);
 
 	// let logoutButton = document.querySelector('#logoutButton')
 	// logoutButton.addEventListener('click',()=>{
@@ -77,6 +77,10 @@ async function init() {
 	})
 
 	jerver.ready();
-}
 
-document.addEventListener("DOMContentLoaded", init);
+	console.log("about to request all events");
+	let allEvents = jerver.get('allEvents');
+	console.log(allEvents);
+// }
+
+// document.addEventListener("DOMContentLoaded", init);
