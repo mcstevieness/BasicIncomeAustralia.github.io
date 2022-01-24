@@ -6,6 +6,8 @@ import { Jerver } from "https://joshprojects.site/Jerver.js";
 import { JTML } from "https://joshprojects.site/JTML_Module.js";
 // takes in a Date object, and adds h minutes to it (h can be negative)
 function addMinutes(initialTime, h) {
+    console.log(initialTime);
+    console.log(h);
     return new Date(initialTime.getTime() + (h * 60 * 1000));
 }
 function renderEvents(eventArray) {
@@ -20,7 +22,7 @@ function renderEvents(eventArray) {
             .html(currentEvent.eventTitle)
             .appendTo(article);
         let eventDate = new JTML('p')
-            .html(`${currentEvent.eventDate.toString()} - ${addMinutes(currentEvent.eventDate, currentEvent.eventDurationInMins).toString()}`)
+            .html(`${currentEvent.eventDateObj.toString()} - ${addMinutes(currentEvent.eventDateObj, currentEvent.eventDurationInMins).toString()}`)
             .appendTo(article);
         let content = new JTML('p')
             .class('pTag')
