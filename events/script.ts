@@ -5,6 +5,33 @@ import { Jerver } from "https://joshprojects.site/Jerver.js";
 // @ts-ignore
 import { JTML } from "https://joshprojects.site/JTML_Module.js";
 
+// takes in a Date object, and adds h minutes to it (h can be negative)
+function addMinutes(initialTime,h) {
+	return new Date(initialTime.getTime() + (h*60*1000));
+}
+
+function renderEvents(eventArray) {
+	let eventContainer = new JTML(`#eventContainer`);
+	eventArray.forEach((currentEvent)=>{
+		console.log(currentEvent);
+		let article = new JTML('article')
+			.class('articleSegment')
+			.appendTo(eventContainer);
+
+		let heading = new JTML('h4')
+			.html(currentEvent.eventTitle)
+			.appendTo(article);
+		
+		let eventDate = new JTML('p')
+			.html(`${currentEvent.eventDate.toString()} - ${addMinutes(currentEvent.eventDate,currentEvent.eventDurationInMins).toString()}`)
+
+		let content = new JTML('p')
+			.class('pTag')
+			.html(currentEvent.eventContent)
+			
+	})
+}
+
 async function init() {
 	// console.log("howdy");
 	// console.log(AuthHandler);
@@ -44,8 +71,10 @@ async function init() {
 		console.log(allEvents);
 
 		allEvents.forEach((currentEvent)=>{
-			console.log(currentEvent);
+			currentEvent.eventDate = new Date(currentEvent.eventDate);
 		})
+
+		
 	// })()
 }
 
