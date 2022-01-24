@@ -392,6 +392,7 @@ h4 {
 	line-height: 1.1em;
 	font-size: clamp(2em, calc(0.04 * var(--bodyWidth)), 3em);
 	color: var(--offBlack);
+	margin: 0px;
 }
 
 .ptag, li {

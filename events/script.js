@@ -9,7 +9,8 @@ function addMinutes(initialTime, h) {
     return new Date(initialTime.getTime() + (h * 60 * 1000));
 }
 function renderEvents(eventArray) {
-    let eventContainer = new JTML(`#eventContainer`);
+    let eventContainer = new JTML(`#eventContainer`)
+        .html('');
     eventArray.forEach((currentEvent) => {
         console.log(currentEvent);
         let article = new JTML('article')

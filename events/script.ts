@@ -11,7 +11,8 @@ function addMinutes(initialTime,h) {
 }
 
 function renderEvents(eventArray) {
-	let eventContainer = new JTML(`#eventContainer`);
+	let eventContainer = new JTML(`#eventContainer`)
+		.html('');
 	eventArray.forEach((currentEvent)=>{
 		console.log(currentEvent);
 		let article = new JTML('article')
@@ -33,6 +34,7 @@ function renderEvents(eventArray) {
 			
 	})
 }
+
 
 async function init() {
 	// console.log("howdy");
