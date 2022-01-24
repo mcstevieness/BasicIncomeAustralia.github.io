@@ -58,6 +58,7 @@ async function init() {
     allEvents.forEach((currentEvent) => {
         currentEvent.eventDate = new Date(currentEvent.eventDate);
     });
+    renderEvents(allEvents);
     // })()
 }
 document.addEventListener("DOMContentLoaded", init);

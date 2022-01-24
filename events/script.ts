@@ -74,7 +74,7 @@ async function init() {
 			currentEvent.eventDate = new Date(currentEvent.eventDate);
 		})
 
-		
+		renderEvents(allEvents);
 	// })()
 }
 
