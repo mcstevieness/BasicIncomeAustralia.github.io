@@ -77,10 +77,12 @@ function encryptXor(text, key) {
 	})
 
 	jerver.ready();
-
+(async ()=>{
 	console.log("about to request all events");
-	let allEvents = jerver.get('allEvents');
+	let allEvents = await jerver.get('allEvents');
 	console.log(allEvents);
+})()
+	
 // }
 
 // document.addEventListener("DOMContentLoaded", init);

@@ -62,8 +62,10 @@ jerver.on('userStatus', (userStatus) => {
     // this.location.href = newLocation;
 });
 jerver.ready();
-console.log("about to request all events");
-let allEvents = jerver.get('allEvents');
-console.log(allEvents);
+(async () => {
+    console.log("about to request all events");
+    let allEvents = await jerver.get('allEvents');
+    console.log(allEvents);
+})();
 // }
 // document.addEventListener("DOMContentLoaded", init);
