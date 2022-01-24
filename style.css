@@ -460,6 +460,7 @@ sup:hover {
 .articleSegment {
 	background-color: #ffffff;
 	padding: 20px;
+	margin: 30px var(--leftMargin);
 }
 
 
