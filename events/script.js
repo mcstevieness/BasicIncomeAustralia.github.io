@@ -59,7 +59,7 @@ async function init() {
     let allEvents = await jerver.get('allEvents');
     console.log(allEvents);
     allEvents.forEach((currentEvent) => {
-        currentEvent.eventDate = new Date(currentEvent.eventDate);
+        currentEvent.eventDateObj = new Date(currentEvent.eventDate);
     });
     renderEvents(allEvents);
     // })()
