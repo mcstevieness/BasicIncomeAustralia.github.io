@@ -24,10 +24,12 @@ function renderEvents(eventArray) {
 		
 		let eventDate = new JTML('p')
 			.html(`${currentEvent.eventDate.toString()} - ${addMinutes(currentEvent.eventDate,currentEvent.eventDurationInMins).toString()}`)
+			.appendTo(article)
 
 		let content = new JTML('p')
 			.class('pTag')
 			.html(currentEvent.eventContent)
+			.appendTo(article)
 			
 	})
 }

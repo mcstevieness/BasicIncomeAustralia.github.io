@@ -19,10 +19,12 @@ function renderEvents(eventArray) {
             .html(currentEvent.eventTitle)
             .appendTo(article);
         let eventDate = new JTML('p')
-            .html(`${currentEvent.eventDate.toString()} - ${addMinutes(currentEvent.eventDate, currentEvent.eventDurationInMins).toString()}`);
+            .html(`${currentEvent.eventDate.toString()} - ${addMinutes(currentEvent.eventDate, currentEvent.eventDurationInMins).toString()}`)
+            .appendTo(article);
         let content = new JTML('p')
             .class('pTag')
-            .html(currentEvent.eventContent);
+            .html(currentEvent.eventContent)
+            .appendTo(article);
     });
 }
 async function init() {
