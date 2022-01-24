@@ -15,7 +15,7 @@ async function init() {
         messagingSenderId: "340800003121",
         appId: "1:340800003121:web:4e9a2a21689310017e0910"
     };
-    let authHandler = new AuthHandler(firebaseConfig, '#signInContainer', ['email', 'google']);
+    let authHandler = new AuthHandler(firebaseConfig);
     console.log(authHandler);
     // let logoutButton = document.querySelector('#logoutButton')
     // logoutButton.addEventListener('click',()=>{
@@ -32,6 +32,9 @@ async function init() {
     console.log(jerver);
     let allEvents = await jerver.get('allEvents');
     console.log(allEvents);
+    allEvents.forEach((currentEvent) => {
+        console.log(currentEvent);
+    });
     // })()
 }
 document.addEventListener("DOMContentLoaded", init);

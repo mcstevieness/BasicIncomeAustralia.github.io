@@ -3,6 +3,7 @@ import { AuthHandler } from 'https://joshprojects.site/AuthHandler.js';
 // @ts-ignore
 import { Jerver } from "https://joshprojects.site/Jerver.js";
 
+
 // source: https://stackoverflow.com/questions/52450290/why-is-this-simple-javascript-xor-encryption-algorithm-not-working
 function encryptXor(text, key) {
 	// @ts-ignore

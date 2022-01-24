@@ -2,6 +2,8 @@
 import { AuthHandler } from 'https://joshprojects.site/AuthHandler.js';
 // @ts-ignore
 import { Jerver } from "https://joshprojects.site/Jerver.js";
+// @ts-ignore
+import { JTML } from "https://joshprojects.site/JTML_Module.js";
 
 async function init() {
 	// console.log("howdy");
@@ -18,7 +20,7 @@ async function init() {
 		appId: "1:340800003121:web:4e9a2a21689310017e0910"
 	};
 
-	let authHandler = new AuthHandler(firebaseConfig,'#signInContainer',['email','google']);
+	let authHandler = new AuthHandler(firebaseConfig);
 	console.log(authHandler);
 
 	// let logoutButton = document.querySelector('#logoutButton')
@@ -40,6 +42,10 @@ async function init() {
 		console.log(jerver);
 		let allEvents = await jerver.get('allEvents');
 		console.log(allEvents);
+
+		allEvents.forEach((currentEvent)=>{
+			console.log(currentEvent);
+		})
 	// })()
 }
 
