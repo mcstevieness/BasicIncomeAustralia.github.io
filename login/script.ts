@@ -10,7 +10,7 @@ function encryptXor(text, key) {
     ).join('');
 }
 
-// async function init() {
+async function init() {
 	// console.log("howdy");
 	// console.log(AuthHandler);
 	// console.log(Jerver);
@@ -77,12 +77,7 @@ function encryptXor(text, key) {
 	})
 
 	jerver.ready();
-(async ()=>{
-	console.log("about to request all events");
-	let allEvents = await jerver.get('allEvents');
-	console.log(allEvents);
-})()
 	
-// }
+}
 
-// document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("DOMContentLoaded", init);
