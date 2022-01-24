@@ -26,7 +26,12 @@ function renderEvents(eventArray) {
 			.appendTo(article);
 		
 		let eventDate = new JTML('p')
-			.html(`${currentEvent.eventDateObj.toString()} - ${addMinutes(currentEvent.eventDateObj,currentEvent.eventDurationInMins).toString()}`)
+			.html(`${currentEvent.eventDateObj.toDateString()}<br>${currentEvent.eventDateObj.toLocaleTimeString([], {hour: 'numeric', 'hour12':true})} - ${addMinutes(currentEvent.eventDateObj,currentEvent.eventDurationInMins).toLocaleTimeString([], {hour: 'numeric', 'hour12':true})}`)
+			.appendTo(article)
+
+		let zoomLink = new JTML('p')
+			.class('pTag')
+			.html(`<a href="${currentEvent.eventLink}">zoom invite link</a>`)
 			.appendTo(article)
 
 		let content = new JTML('p')
@@ -36,6 +41,7 @@ function renderEvents(eventArray) {
 			
 	})
 }
+
 
 
 async function init() {
