@@ -409,7 +409,7 @@ h4 {
 	font-weight: bold;
 }
 
-.extlink {
+.extlink, p > a {
 	padding: 3px;
 	background-color: #fcf4c9;
 }

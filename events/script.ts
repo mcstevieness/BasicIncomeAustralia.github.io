@@ -38,6 +38,18 @@ function renderEvents(eventArray) {
 			.class('pTag')
 			.html(currentEvent.eventContent)
 			.appendTo(article)
+
+		let googleCalendar = new JTML('p')
+			.class('pTag')
+			.html(`<a target="_blank" href="https://calendar.google.com/event?action=TEMPLATE&amp;tmeid=NmU3cDBlc2RiNnY0cjMwMWZua2NsdDQ3a2cgcDlnb2duM3RhNnJxZzJwNnNtZjMzcXRnczBAZw&amp;tmsrc=p9gogn3ta6rqg2p6smf33qtgs0%40group.calendar.google.com"><img border="0" src="https://www.google.com/calendar/images/ext/gc_button1_en-GB.gif"></a>`)
+			.appendTo(article)
+
+		let RSVP = new JTML('p')
+			.class('pTag')
+			.html(`<a href="https://www.meetup.com/BasicIncomeAu/events">RSVP on Meetup</a>`)
+			.appendTo(article)
+
+
 			
 	})
 }
