@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+<title>UBI Blog</title>
+</head>
+
+<link rel="stylesheet" href="default.css">
+
+<script type="text/javascript">
+var oDoc, sDefTxt;
+
+function initDoc() {
+  oDoc = document.getElementById("textBox");
+  sDefTxt = oDoc.innerHTML;
+  if (document.compForm.switchMode.checked) { setDocMode(true); }
+}
+
+function formatDoc(sCmd, sValue) {
+  if (validateMode()) { document.execCommand(sCmd, false, sValue); oDoc.focus(); }
+}
+
+function validateMode() {
+  if (!document.compForm.switchMode.checked) { return true ; }
+  alert("Uncheck \"Show HTML\".");
+  oDoc.focus();
+  return false;
+}
+
+function setDocMode(bToSource) {
+  var oContent;
+  if (bToSource) {
+    oContent = document.createTextNode(oDoc.innerHTML);
+    oDoc.innerHTML = "";
+    var oPre = document.createElement("pre");
+    oDoc.contentEditable = false;
+    oPre.id = "sourceText";
+    oPre.contentEditable = true;
+    oPre.appendChild(oContent);
+    oDoc.appendChild(oPre);
+    document.execCommand("defaultParagraphSeparator", false, "div");
+  } else {
+    if (document.all) {
+      oDoc.innerHTML = oDoc.innerText;
+    } else {
+      oContent = document.createRange();
+      oContent.selectNodeContents(oDoc.firstChild);
+      oDoc.innerHTML = oContent.toString();
+    }
+    oDoc.contentEditable = true;
+  }
+  oDoc.focus();
+}
+
+function printDoc() {
+  if (!validateMode()) { return; }
+  var oPrntWin = window.open("","_blank","width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
+  oPrntWin.document.open();
+  oPrntWin.document.write("<!doctype html><html><head><title>Print<\/title><\/head><body onload=\"print();\">" + oDoc.innerHTML + "<\/body><\/html>");
+  oPrntWin.document.close();
+}
+</script>
+
+<?php
+	$sname= "localhost";
+	$unmae= "root";
+	$password = "";
+	$db_name = "test_db";
+	$conn = mysqli_connect($sname, $unmae, $password, $db_name);
+
+	if (!$conn) {
+		echo "Connection failed!";
+	}
+?>
+
+<?php 
+
+session_start(); 
+include "db_conn.php";
+
+	if (isset($_POST['uname']) && isset($_POST['password'])) 
+	{
+		function validate($data){
+		   $data = trim($data);
+		   $data = stripslashes($data);
+		   $data = htmlspecialchars($data);
+		   return $data;
+		}
+
+		$uname = validate($_POST['uname']);
+		$pass = validate($_POST['password']);
+
+		if (empty($uname)) {
+			header("Location: index.php?error=User Name is required");
+			exit();
+		}else if(empty($pass)){
+			header("Location: index.php?error=Password is required");
+			exit();
+		}else{
+			$sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+			$result = mysqli_query($conn, $sql);
+			if (mysqli_num_rows($result) === 1) {
+				$row = mysqli_fetch_assoc($result);
+				if ($row['user_name'] === $uname && $row['password'] === $pass) {
+					echo "Logged in!";
+					$_SESSION['user_name'] = $row['user_name'];
+					$_SESSION['name'] = $row['name'];
+					$_SESSION['id'] = $row['id'];
+					header("Location: home.php");
+					exit();
+				}else{
+					header("Location: index.php?error=Incorect User name or password");
+					exit();
+				}
+			}else{
+				header("Location: index.php?error=Incorect User name or password");
+				exit();
+			}
+		}
+	}else{
+		header("Location: index.php");
+		exit();
+	}
+?>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<body onload="initDoc();"  >
+<!-- Header -->
+<div  id="PageHeader" class="pageheader">  
+<h1 > <span onclick="openNav()"><i class="fa fa-bars" style="font-size: 48px;" ></i></span> Basic Income Australia Blogs</h1>
+</div>
+<!-- Tool list -->
+<div  id="ToolList" class="toollist">
+</div>
+<!-- Left Side Pane -->
+<div  id="LeftPane" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-bars" ></i></a>
+  <a href="index.html" ><i class="fa fa-home"></i> Home</a>
+  <a href="EditBlogPost.html" ><i class="fa fa-user-edit"></i>  Edit New Blog</a>
+  <a href="ReadBlog.html" ><i class="fa fa-readme"></i>Read Blog</a>
+  <!-- List of Authors -->
+</div>
+
+<!-- Right Side Pane -->
+<div  id="RightPane" class="rightpane">
+</div>
+
+<main>
+<div  id="CenterList" class="centerlistmain">
+<div class="panel-center" >
+	<form action="login.php" method="post">
+		<h2 class="login" >Login</h2>
+        <label class="login" >User Name</label>
+        <input class="login"  type="text" name="uname" placeholder="User Name"><br>
+        <label class="login" >Password</label>
+        <input class="login"  type="password" name="password" placeholder="Password"><br> 
+        <button class="login"  type="submit">Login</button>
+     </form>
+</div>
+</div>
+
+<!-- Footer -->
+<div  id="Footer" class="pagefooter">
+
+</div>
+
+</main>
+</body>
+</html>
+<script>
+
+function openNav() {
+  document.getElementById("LeftPane").style.left = "0px";
+  document.getElementById("main").style.marginLeft = "250px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+function closeNav() {
+  document.getElementById("LeftPane").style.left = "-250px";
+  document.getElementById("main").style.marginLeft = "0";
+  document.body.style.backgroundColor = "white";
+}
+
+
+  var BlogList=[];
+  var AuthorList=[];
+
+	var xmlhttp;
+var SimpleReturn = function()
+{
+  if (xmlhttp.readyState==4)// && xmlhttp.status==200)
+  {
+    var responsetext = xmlhttp.responseText;
+    if(xmlhttp.status!=200)
+      responsetext = xmlhttp.status;
+    document.getElementById(loaddiv).innerHTML = responsetext;
+  }
+}
+
+function LoadPage(loadpage,loaddiv,parameters, returnfunction)
+{
+	if (window.XMLHttpRequest)
+	{
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+		xmlhttp = new XMLHttpRequest();
+	}
+	else
+	{// code for IE6, IE5
+		xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+	xmlhttp.onreadystatechange = function()
+  {
+    if (xmlhttp.readyState==4)// && xmlhttp.status==200)
+    {
+      var responsetext = xmlhttp.responseText;
+      if(xmlhttp.status!=200)
+        responsetext = xmlhttp.status;
+
+      returnfunction(loaddiv,responsetext);
+    }
+  }
+
+	xmlhttp.open("POST",loadpage,true);
+	xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xmlhttp.send(parameters);
+}
+
+var DrawBlog = function (destination, blog)
+{
+  var outputhtml = "";
+  outputhtml += '<div class=panel><div class="innerpanel" onclick=LoadBlog('+ blog.id +',CenterList)><h2>'+ blog.title + '</h2></div></div>';
+
+  document.getElementById(destination).innerHTML = outputhtml;
+}
+
+
+
+var DrawBlogList = function (destination, blogs)
+{
+  var outputhtml = "";
+  foreach(blog in blogs)
+  {
+    outputhtml += '<div class=panel><div class="innerpanel" onclick=LoadBlog('+ blog.id +',CenterList)><h2>'+ blog.title + '</h2></div></div>';
+  }
+
+  document.getElementById(destination).innerHTML = outputhtml;
+}
+
+function LoadBlogList ()
+{
+  var loadpage = "LoadBlogList";
+  var loaddiv = "centerlistmain";
+  var parameters = "";
+
+  LoadPage(loadpage,loaddiv,parameters,DrawBlogList)
+}
+
+var DrawAuthorList = function (destination, AuthorList)
+{
+  var outputhtml = "";
+  foreach(author in AuthorList)
+  {
+    outputhtml += '<div class=panel><div class="innerpanel" onclick=LoadAuthorBlogs('+ author.id +',CenterList)><h2>'+ blog.title + '</h2></div></div>';
+  }
+
+  document.getElementById(destination).innerHTML = outputhtml;
+}
+
+function LoadAuthorBlogs (loaddiv,author,drawfunction)
+{
+  var loadpage = "loadAuthorBlogs";
+  LoadPage(loadpage,loaddiv,author,drawfunction)
+}
+
+function LoadAuthorList (author)
+{
+  var loadpage = "LoadAuthorList";
+  var loaddiv = "centerlistmain";
+
+  //SELECT * FROM Blogs WHERE authorid = "author.id"
+  LoadPage(loadpage,loaddiv,author,DrawAuthorList);
+}
+
+var DrawAuthor = function (destination, Author)
+{
+  var outputhtml = "";
+
+  outputhtml += '<div class=panel><div class="innerpanel" ><h2>'+ Author.name + '</h2></div>'
+              + '<div class="innerpanel" >'+ Author.bio + '</div>'
+              + '<div id="BlogList" class="innerpanel" ></div>'
+              + '</div>';
+
+  document.getElementById(loaddiv).innerHTML = responsetext;
+
+  LoadAuthorBlogs(BlogList, Author.id, DrawBlogList);
+}
+
+var CreateBlog = function()
+{
+  var loadpage = "EditBlogsPost.html";
+  var loaddiv = "CenterPane";
+
+  LoadPage(loadpage,loaddiv,"",SimpleReturn);
+}
+
+/*
+  GetAuthorBlogs("CenterPane",author.id);
+  GetBlog("CenterPane",blog.id);
+  GetAuthor("CenterPane",author.id);
+
+  CreateBlog("CenterPane");
+*/
+
+window.onload = function()
+{
+  LoadAuthorList ("LeftPane");
+  LoadBlogList ("RightPane");
+}
+
+</script>
